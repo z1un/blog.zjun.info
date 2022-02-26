@@ -154,7 +154,7 @@ uglyURLs = false
 [outputs]
     page = ["HTML"]
     # home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex", "Algolia"]
-    home = ["HTML", "SectionsAtom", "SectionsRSS", "SearchIndex"]
+    home = ["HTML", "SectionsAtom", "SectionsRSS"]
     section = ["HTML"]
     taxonomy = ["HTML"]
     term = ["HTML"]
@@ -241,10 +241,6 @@ uglyURLs = false
     [[menu.main]]
         weight = 14
         identifier = "lang-switcher"
-    [[menu.main]]
-        weight = 15
-        identifier = "search"
-        post = "search"
 
 
 
@@ -1367,7 +1363,7 @@ uglyURLs = false
 
     # 说明：需要开启 `SearchIndex` 的输出
 
-    enableLunrSearch = true
+    enableLunrSearch = false
     # 说明：https://lunrjs.com/
 
 
