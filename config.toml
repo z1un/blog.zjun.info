@@ -243,6 +243,39 @@ uglyURLs = false
         identifier = "lang-switcher"
 
 
+    [[menu.socials]]
+        url = "https://github.com/z1un"
+        name = "Github"
+        weight = 1
+        pre = "external"
+    [[menu.socials]]
+        url = "https://twitter.com/zjuninfo"
+        name = "Twitter"
+        weight = 2
+        pre = "external"
+    [[menu.socials]]
+        url = "https://t.me/zjuninfo"
+        name = "Telegram"
+        weight = 3
+        pre = "external"
+    
+
+    [[menu.links]]
+        pageref = "/"
+        name = "Home"
+        weight = 1
+        pre = "internal"
+    [[menu.links]]
+        pageref = "/posts/"
+        name = "Posts"
+        weight = 2
+        pre = "internal"
+    [[menu.links]]
+        pageref = "/tags/"
+        name = "Tags"
+        weight = 3
+        pre = "internal"
+
 
 ##########################################
 # 主题配置
@@ -446,7 +479,7 @@ uglyURLs = false
     chineseZodiac = true
 
     # 是否翻译年份（仅对年份标题有效）
-    i18nYear = true
+    i18nYear = false
     # 是否翻译月份（仅对月份标题有效）
     i18nMonth = true
 
