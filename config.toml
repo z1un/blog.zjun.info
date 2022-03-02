@@ -306,7 +306,7 @@ uglyURLs = false
     # 在窄视图下隐藏菜单栏并显示一个按钮？
     enableNavToggle = true
 
-    navHeight = "13em"
+    navHeight = "10em"
     # 说明：菜单栏展开时的高度
 
 
