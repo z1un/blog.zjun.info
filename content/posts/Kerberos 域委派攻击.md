@@ -4,7 +4,7 @@ slug: kerberos-domain-delegation-attack
 url: /2022/kerberos-domain-delegation-attack.html
 date: 2022-02-22T21:17:23+08:00
 categories: ["网络安全"]
-tags: ["委派", "域渗透", "Windows", "Kerberos", "NTLM Relay", "Pass The Ticket"]
+tags: ["委派", "域渗透", "Windows", "Kerberos", "NTLM Relay", "Pass The Ticket", "CVE-2019-1040"]
 toc: true
 draft: false
 
