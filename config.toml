@@ -354,11 +354,11 @@ uglyURLs = false
     # 3. posts     文章摘要
     # 4. page      普通页面
 
-    homeLayout = "posts"
+    homeLayout = "poetry"
 
     ## 「诗意人生」
     # 诗句，支持 Markdown
-    homePoetry = []
+    homePoetry = ["潜心习安全", "自由、开放、分享", "专注于 WEB 安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。"]
     # 底部链接的内间距，单位：em
     homeLinksPadding = 1
 
