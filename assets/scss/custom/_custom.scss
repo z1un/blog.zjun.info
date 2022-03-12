@@ -1,4 +1,28 @@
 .home .poetry {
     padding: 12em 1em;
     max-width: 29em;
+    a {
+        text-decoration:none;
+        color:#121314;
+        position:relative
+    }
+    a:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 80%;
+        left: -.1em;
+        right: -.1em;
+        bottom: 0;
+        transition: top .2s cubic-bezier(0, .8, .13, 1);
+        background-color: rgba(162, 226, 206, 0.5)
+        
+    }
+    a:hover:after {
+        top: 0
+    }
+    // a {
+    //     text-decoration: underline;
+    //     text-decoration-color: var(--color-contrast-low);
+    // }
 }
