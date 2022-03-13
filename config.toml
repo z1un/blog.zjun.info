@@ -724,14 +724,14 @@ uglyURLs = false
 
     # 说明：仅在生产环境（production）下渲染
 
-    googleAdClient = ""
+    googleAdClient = "ca-pub-7472350712245296"
 
     ## 自动广告
-    enableGoogleAutoAds = false
+    enableGoogleAutoAds = true
 
     ## 广告单元
-    enableGoogleAdUnits = false
-    googleAdSlot = ""
+    enableGoogleAdUnits = true
+    googleAdSlot = "6982502289"
 
 
     ######################################
