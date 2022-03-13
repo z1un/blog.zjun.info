@@ -1,6 +1,7 @@
 ---
 title: "友链"
 url: links.html
+comments: true
 date: 2019-09-21 12:51:49
 ---
 
