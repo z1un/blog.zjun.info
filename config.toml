@@ -675,7 +675,7 @@ uglyURLs = false
     ## Utterances
     enableUtterances = true
     utterancesRepo = "z1un/blog.zjun.info"
-    utterancesIssueTerm = "pathname"
+    utterancesIssueTerm = "title"
     utterancesTheme = "github-light"
     utterancesThemeDark = "photon-dark"
     utterancesLabel = ""
