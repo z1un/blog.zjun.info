@@ -205,11 +205,11 @@ uglyURLs = false
         name = "分类"
         weight = 3
         pre = "internal"
-    # [[menu.main]]
-    #     pageref = "/tags/"
-    #     name = "标签"
-    #     weight = 4
-    #     pre = "internal"
+    [[menu.main]]
+        pageref = "/tags/"
+        name = "标签"
+        weight = 4
+        pre = "internal"
     [[menu.main]]
         pageref = "/links.html"
         name = "友链"
