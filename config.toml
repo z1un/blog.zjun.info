@@ -243,38 +243,38 @@ uglyURLs = false
         identifier = "lang-switcher"
 
 
-    [[menu.socials]]
-        url = "https://github.com/z1un"
-        name = "Github"
-        weight = 1
-        pre = "external"
-    [[menu.socials]]
-        url = "https://twitter.com/zjuninfo"
-        name = "Twitter"
-        weight = 2
-        pre = "external"
-    [[menu.socials]]
-        url = "https://t.me/zjuninfo"
-        name = "Telegram"
-        weight = 3
-        pre = "external"
+    # [[menu.socials]]
+    #     url = "https://github.com/z1un"
+    #     name = "Github"
+    #     weight = 1
+    #     pre = "external"
+    # [[menu.socials]]
+    #     url = "https://twitter.com/zjuninfo"
+    #     name = "Twitter"
+    #     weight = 2
+    #     pre = "external"
+    # [[menu.socials]]
+    #     url = "https://t.me/zjuninfo"
+    #     name = "Telegram"
+    #     weight = 3
+    #     pre = "external"
     
 
-    [[menu.links]]
-        pageref = "/"
-        name = "Home"
-        weight = 1
-        pre = "internal"
-    [[menu.links]]
-        pageref = "/posts/"
-        name = "Posts"
-        weight = 2
-        pre = "internal"
-    [[menu.links]]
-        pageref = "/tags/"
-        name = "Tags"
-        weight = 3
-        pre = "internal"
+    # [[menu.links]]
+    #     pageref = "/"
+    #     name = "Home"
+    #     weight = 1
+    #     pre = "internal"
+    # [[menu.links]]
+    #     pageref = "/posts/"
+    #     name = "Posts"
+    #     weight = 2
+    #     pre = "internal"
+    # [[menu.links]]
+    #     pageref = "/tags/"
+    #     name = "Tags"
+    #     weight = 3
+    #     pre = "internal"
 
 
 ##########################################
