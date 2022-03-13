@@ -13,7 +13,7 @@ date: 2019-09-21 12:50:05
 
 此外，本博客是一个 [PWA](https://developers.google.com/web/progressive-web-apps/) 站点，你可以通过浏览器添加本博客到你的手机主屏或电脑桌面，随时随地查看本博客。如果你想订阅本博客，推荐 [Atom](https://blog.zjun.info/atom.xml)╱[RSS](https://blog.zjun.info/rss.xml)。当然，你也可以经常访问本博客，以及时获取到最新文章。
 
-因为本博客没有评论系统，后续也不会使用任何评论系统，如果你在浏览博客的过程中产生了任何疑惑或为了纠正我的错误，欢迎前往 Github 提交 [Issue](https://github.com/z1un/blog.zjun.info/issues)。
+如果你在浏览博客的过程中产生了任何疑惑或为了纠正我的错误，欢迎前往 Github 提交 [Issue](https://github.com/z1un/blog.zjun.info/issues)。同时本博客评论系采用 [utteranc](https://utteranc.es/)，按需加载评论系统。
 
 本博客所有文章书写规范依照 [chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines) 和 [markdownlint](https://github.com/DavidAnson/markdownlint/)。
 
