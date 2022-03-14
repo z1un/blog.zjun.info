@@ -1,0 +1,1633 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+    <title type="text">zjun&#39;s blog</title>
+    <subtitle type="html">这是zjun的个人博客，专注于WEB安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。</subtitle>
+    <updated>2022-03-14T11:31:42&#43;08:00</updated>
+    <id>https://blog.zjun.info/</id>
+    <link rel="alternate" type="text/html" href="https://blog.zjun.info/" />
+    <link rel="self" type="application/atom&#43;xml" href="https://blog.zjun.info/atom.xml" />
+    <author>
+            <name>zjun</name>
+            <uri>https://blog.zjun.info/</uri>
+            
+                <email>i@zjun.info</email>
+            </author>
+    <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
+    <generator uri="https://gohugo.io/" version="0.94.0">Hugo</generator>
+        <entry>
+            <title type="text">CVE 2022 0543 Redis Lua 沙盒逃逸 RCE</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/CVE-2022-0543.html" />
+            <id>https://blog.zjun.info/2022/CVE-2022-0543.html</id>
+            <updated>2022-03-11T16:33:21&#43;08:00</updated>
+            <published>2022-03-11T12:04:17&#43;08:00</published>
+            
+            <summary type="html">巴西研究员 Reginaldo Silva 于 2022 年 3 月 8 日公开披露 1 该漏洞，从他的博客得知 CVE-2022-0543 该 Redis 沙盒逃逸漏洞仅影响 Debian 系的 Linux 发行版本，并非 Redis 本身漏洞。ph 师傅也在其 vulhub 2 项目中更新了该漏洞。 Redis 是……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2022-0543/" term="CVE-2022-0543" label="CVE-2022-0543" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/redis/" term="Redis" label="Redis" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/lua/" term="Lua" label="Lua" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E6%B2%99%E7%9B%92%E9%80%83%E9%80%B8/" term="沙盒逃逸" label="沙盒逃逸" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">CVE-2022-0847 Dirty Pipe Linux 内核提权漏洞</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/cve-2022-0847.html" />
+            <id>https://blog.zjun.info/2022/cve-2022-0847.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2022-03-08T16:17:13&#43;08:00</published>
+            
+            <summary type="html">CVE-2022-0847 于 2022-03-07 公开披露，发现者 Max Kellermann 研究员将该漏洞命名为 Dirty Pipe（脏管道）。由作者原文 1：可得知该漏洞影响范围：5.8 &amp;lt;= Linux 内核版本 &amp;lt; 5.16.11 / 5.15.25 / 5.10.102。它允许覆盖……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2022-0847/" term="CVE-2022-0847" label="CVE-2022-0847" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/dirty-pipe/" term="Dirty Pipe" label="Dirty Pipe" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/linux-%E6%8F%90%E6%9D%83/" term="Linux 提权" label="Linux 提权" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">MS14-068 (CVE-2014-6324) 域提权漏洞分析</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/MS14-068.html" />
+            <id>https://blog.zjun.info/2022/MS14-068.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2022-03-01T23:48:16&#43;08:00</published>
+            
+            <summary type="html">MS14-068 (CVE-2014-6324) 是微软于 2014 年 11 月发布的补丁 (KB3011780) 中修复的一个漏洞，该漏洞允许攻击者以任意用户的权限提升到域管理员帐户权限，漏洞影响 Windows Server 2003 到 Windows Server 2012 R2 期间的 Windows 版本。 若是受影响的 Windows 版……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ms14-068/" term="MS14-068" label="MS14-068" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2014-6324/" term="CVE-2014-6324" label="CVE-2014-6324" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/pass-the-ticket/" term="Pass The Ticket" label="Pass The Ticket" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/kerberos/" term="Kerberos" label="Kerberos" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/pac/" term="PAC" label="PAC" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Bypass 域敏感组访问控制信息查询</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/bypass-domain-sensitive-group-acl-information-query.html" />
+            <id>https://blog.zjun.info/2022/bypass-domain-sensitive-group-acl-information-query.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2022-02-23T21:15:45&#43;08:00</published>
+            
+            <summary type="html">内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令： 1 2 3 4 5 6 net group &amp;#34;domain controllers&amp;#34; /domain net group &amp;#34;domain computers&amp;#34; /domain net group &amp;#34;domain admins&amp;#34; /domain net group &amp;#34;domain users&amp;#34; /domain net group……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/acl/" term="ACL" label="ACL" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" term="访问控制" label="访问控制" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%9F%9F/" term="域" label="域" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E4%BF%A1%E6%81%AF%E6%9F%A5%E8%AF%A2/" term="信息查询" label="信息查询" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Kerberos 域委派攻击</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/kerberos-domain-delegation-attack.html" />
+            <id>https://blog.zjun.info/2022/kerberos-domain-delegation-attack.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2022-02-22T21:17:23&#43;08:00</published>
+            
+            <summary type="html">在 Windows 2000 Server 首次发布 Active Directory 时，Microsoft 必须提供一种简单的机制来支持用户通过 Kerberos 向 Web Server 进行身份验证并需要代表该用户更新后端数据库服务器上的记录的方案。这通常称为……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%A7%94%E6%B4%BE/" term="委派" label="委派" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%9F%9F%E6%B8%97%E9%80%8F/" term="域渗透" label="域渗透" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/windows/" term="Windows" label="Windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/kerberos/" term="Kerberos" label="Kerberos" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ntlm-relay/" term="NTLM Relay" label="NTLM Relay" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/pass-the-ticket/" term="Pass The Ticket" label="Pass The Ticket" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2019-1040/" term="CVE-2019-1040" label="CVE-2019-1040" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">内网信息搜集密码读取和键盘记录</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/password-reading-and-keyboard-recording.html" />
+            <id>https://blog.zjun.info/2022/password-reading-and-keyboard-recording.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2022-01-28T12:50:05&#43;00:00</published>
+            
+            <summary type="html">记录三个我常用的简单的键盘记录和密码读取操作，windows 的密码读取就不多说了，毕竟都很熟悉，主要是 linux 方面，当然还有很多其他的姿势，比如： 工具 简介 mimipenguin linux 读密码，……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%AF%86%E7%A0%81%E8%AF%BB%E5%8F%96/" term="密码读取" label="密码读取" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E9%94%AE%E7%9B%98%E8%AE%B0%E5%BD%95/" term="键盘记录" label="键盘记录" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Web 渗透测试信息搜集 CheckList</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/web-penetration-information-collection-checklist.html" />
+            <id>https://blog.zjun.info/2022/web-penetration-information-collection-checklist.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2022-01-18T12:50:05&#43;00:00</published>
+            
+            <summary type="html">这篇文章是 21 年中旬记录的，平安夜p 牛的直播中也谈到，对于渗透测试来说最好有一个 checklist，为了避免忘记测试某一部分的内容而错过一些重要信息，同时有了 checklist 也……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/web-%E6%B8%97%E9%80%8F/" term="Web 渗透" label="Web 渗透" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E4%BF%A1%E6%81%AF%E6%90%9C%E9%9B%86/" term="信息搜集" label="信息搜集" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/checklist/" term="CheckList" label="CheckList" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">CobaltStrike 免费域名通过 CDN Https 上线</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2021/cobaltstrike-goes-online-via-cdn-and-https.html" />
+            <id>https://blog.zjun.info/2021/cobaltstrike-goes-online-via-cdn-and-https.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2021-04-13T12:50:05&#43;00:00</published>
+            
+            <summary type="html">由于去年我的服务器被微步标记为了远控服务器，所以一直就没有再用它了，几个月后标签才解除。所以修改 CobaltStrike 特征、隐藏真实 IP、混淆流量，防止演习中被溯源对现在的我来说显……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cobaltstrike/" term="CobaltStrike" label="CobaltStrike" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cdn/" term="CDN" label="CDN" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">一些 Docker 逃逸漏洞</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2021/some-docker-escape-vulnerabilities.html" />
+            <id>https://blog.zjun.info/2021/some-docker-escape-vulnerabilities.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2021-02-24T12:50:05&#43;00:00</published>
+            
+            <summary type="html">渗透测试中，常会拿到 Docker 环境的 Shell，为了扩展攻击面和进一步拿到有价值数据，不得不需要逃逸到宿主机上。所以查询了目前的 Docker 逃逸手法，做个复现总结。 判断是否为 Docker 环……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2016-5195/" term="CVE-2016-5195" label="CVE-2016-5195" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2020-15257/" term="CVE-2020-15257" label="CVE-2020-15257" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2019-5736/" term="CVE-2019-5736" label="CVE-2019-5736" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cve-2019-14271/" term="CVE-2019-14271" label="CVE-2019-14271" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/docker-%E9%80%83%E9%80%B8/" term="Docker 逃逸" label="Docker 逃逸" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">审计 Typecho 反序列化导致任意代码执行</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2021/audit-typecho-deserialize-to-rce.html" />
+            <id>https://blog.zjun.info/2021/audit-typecho-deserialize-to-rce.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2021-02-19T12:50:05&#43;00:00</published>
+            
+            <summary type="html">Typecho 是一个 PHP 开发的博客系统，使用得还是挺多的，本文审计的漏洞是基于 v1.1 版本的，于 2017 年曝出的反序列化漏洞。在看完其他很多师傅博客对该漏洞的审计，发现很有学习价值，同时……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" term="代码审计" label="代码审计" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/php/" term="PHP" label="PHP" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" term="反序列化漏洞" label="反序列化漏洞" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/typecho/" term="Typecho" label="Typecho" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" term="代码审计" label="代码审计" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">JWT 鉴权攻击</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2021/attacking-jwt-authentication.html" />
+            <id>https://blog.zjun.info/2021/attacking-jwt-authentication.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2021-02-15T12:50:05&#43;00:00</published>
+            
+            <summary type="html">Json Web Token 简称 JWT，是一种基于 json 格式传输信息的 token 鉴权方式。目前应用较为广泛，Web 登陆认证以及 CTF 中也时常遇到。由于它的无状态和签名方式，因此存在一些特定于 JWT 的安全……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/jwt/" term="JWT" label="JWT" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">最近写的一款 CobaltStrike 插件</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/z1-aggressorscripts.html" />
+            <id>https://blog.zjun.info/2020/z1-aggressorscripts.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-11-19T12:50:05&#43;00:00</published>
+            
+            <summary type="html">Cobalt Strike 扩展性强，但是目前集成化插件很少，且大部分不满足个人内网渗透需求，所以有了本篇内容。本文不再更新但是 github 插件仓库将长期更新。 Z1-AggressorScripts 2020.11.21 更新： 辅助模块的 zip 打包更换成 uknow……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E5%AE%89%E5%85%A8%E5%B7%A5%E5%85%B7/" term="安全工具" label="安全工具" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/aggressorscripts/" term="AggressorScripts" label="AggressorScripts" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" term="内网渗透" label="内网渗透" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/cobaltstrike/" term="CobaltStrike" label="CobaltStrike" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">浅析 Flask SSTI 模板注入</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/analysis-of-flask-ssti-template-injection.html" />
+            <id>https://blog.zjun.info/2020/analysis-of-flask-ssti-template-injection.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-09-16T12:50:05&#43;00:00</published>
+            
+            <summary type="html">最近的省赛遇到一个 Flask 模板注入 Bypass 的题目，解题过程中很容易得出有过滤 _ 和 . 两个字符，可惜的是在此之前几乎没有用过 Flask 框架，导致比赛当时极其尴尬，根本不知道如何绕过，最……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ssti/" term="SSTI" label="SSTI" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/flask/" term="Flask" label="Flask" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">快速脚本编写场景下的 neovim 配置文件</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/neovim-configuration-file-in-a-fast-scripting-scenario-1.html" />
+            <id>https://blog.zjun.info/2020/neovim-configuration-file-in-a-fast-scripting-scenario-1.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-08-31T12:50:05&#43;00:00</published>
+            
+            <summary type="html">neovim 相较于 vim 更具有优势，不管从代码本身上而言还是扩展来看，neovim 更像是 vim 的新一代产品，neovim 也基本支持 vim 的所有配置。 很多师傅把 neovim 改成了一个无比完善的 I……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/linux/" term="Linux" label="Linux" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/linux/" term="Linux" label="Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/neovim/" term="Neovim" label="Neovim" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/vim/" term="Vim" label="Vim" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/nvim/" term="Nvim" label="Nvim" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Kerberos 协议到票据伪造</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/kerberos-protocol-to-ticket-forgery.html" />
+            <id>https://blog.zjun.info/2020/kerberos-protocol-to-ticket-forgery.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-08-25T12:50:05&#43;00:00</published>
+            
+            <summary type="html">目前域环境中使用的认证协议基本都是 Kerberos ，所以把 Kerberos 协议理解透彻对域渗透来说极其重要。 图片来自： http://web.mit.edu/kerberos/ 0x01 Kerberos 协议简化描述 上面的图片就是 Kerberos 的 logo ，形象为三个狗头，正好符合 Kerberos 协议……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/windows/" term="Windows" label="Windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%9F%9F/" term="域" label="域" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ticket/" term="Ticket" label="Ticket" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E7%99%BD%E9%93%B6%E7%A5%A8%E6%8D%AE/" term="白银票据" label="白银票据" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E9%BB%84%E9%87%91%E7%A5%A8%E6%8D%AE/" term="黄金票据" label="黄金票据" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/kerberos/" term="Kerberos" label="Kerberos" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">NTLM 认证协议到 Pass The Hash 攻击</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/ntlm-authentication-to-pth-attack.html" />
+            <id>https://blog.zjun.info/2020/ntlm-authentication-to-pth-attack.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-08-25T12:50:05&#43;00:00</published>
+            
+            <summary type="html">NTLM 是一种网络认证协议，与 NTLM Hash 的关系就是：NTLM 网络认证协议是以 NTLM Hash 作为根本凭证进行认证的协议。 0x01 NTLM 协议 In a Windows network, NT (New Technology) LAN Manager (NTLM) is a suite of Microsoft security protocols intended to provide authentication, integrity, and confidentiality to users. NTLM is……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/windows/" term="Windows" label="Windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E7%BD%91%E7%BB%9C%E8%AE%A4%E8%AF%81/" term="网络认证" label="网络认证" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%9F%9F/" term="域" label="域" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ntlm/" term="NTLM" label="NTLM" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/pth/" term="PTH" label="PTH" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">CISCN 2020 线上初赛部分 WriteUp</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/ciscn-2020-preliminaries.html" />
+            <id>https://blog.zjun.info/2020/ciscn-2020-preliminaries.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-08-21T12:50:05&#43;00:00</published>
+            
+            <summary type="html">这次比赛分为在线知识问答和 ctf，这里是我们 IRISES 队伍的 ctf writeup。可惜的是队内没有 pwn 手，而且 web 方向的题也没有偏向实战类型，导致 pwn 直接没看，挺尴尬的一场比赛。……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ciscn-2020/" term="CISCN 2020" label="CISCN 2020" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/writeup/" term="WriteUp" label="WriteUp" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">由 Windows 本地认证到 Hash 抓取</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/from-windows-local-authentication-to-obtaining-hash.html" />
+            <id>https://blog.zjun.info/2020/from-windows-local-authentication-to-obtaining-hash.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-08-17T12:50:05&#43;00:00</published>
+            
+            <summary type="html">首发先知社区：https://xz.aliyun.com/t/8127 Windows 本地登陆密码储存在位于 %SystemRoot%\system32\config\ 目录的 SAM 文件中，存储内容为密码的 hash 值。当用户输入密码时， Windows 先将用……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/windows/" term="Windows" label="Windows" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E6%9C%AC%E5%9C%B0%E8%AE%A4%E8%AF%81/" term="本地认证" label="本地认证" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/lm-hash/" term="LM hash" label="LM hash" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ntlm-hash/" term="NTLM hash" label="NTLM hash" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%AF%86%E7%A0%81%E8%AF%BB%E5%8F%96/" term="密码读取" label="密码读取" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">浅谈内网渗透代理</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/talking-about-intranet-penetration-agent.html" />
+            <id>https://blog.zjun.info/2020/talking-about-intranet-penetration-agent.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-07-20T12:50:05&#43;00:00</published>
+            
+            <summary type="html">本文首发于先知社区：https://xz.aliyun.com/t/8001 这篇文章列举几种内网代理方法。 Meterpreter Meterpreter 可以说是渗透中用得较多的工具，在反弹了处于内网的目……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/web-%E6%B8%97%E9%80%8F/" term="Web 渗透" label="Web 渗透" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%86%85%E7%BD%91%E6%B8%97%E9%80%8F/" term="内网渗透" label="内网渗透" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/" term="标签" label="标签" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" term="内网穿透" label="内网穿透" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">浅析 PHP 和 Python 反序列化漏洞分析</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/analysis-of-php-and-python-deserialization-vulnerability.html" />
+            <id>https://blog.zjun.info/2020/analysis-of-php-and-python-deserialization-vulnerability.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-05-22T12:50:05&#43;00:00</published>
+            
+            <summary type="html">首发于先知社区：https://xz.aliyun.com/t/7751 之前一直有接触挺多反序列化的漏洞，但是自己一直没有很细心地学习这方面的东西，所以现在花时……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/php/" term="PHP" label="PHP" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/python/" term="Python" label="Python" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" term="反序列化漏洞" label="反序列化漏洞" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">记一次 Linux 镜像取证</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/a-linux-image-forensics.html" />
+            <id>https://blog.zjun.info/2020/a-linux-image-forensics.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-04-21T12:50:05&#43;00:00</published>
+            
+            <summary type="html">本文首发于 i 春秋：https://bbs.ichunqiu.com/thread-56889-1-5.html 题目地址：http://www.honeynet.……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E5%8F%96%E8%AF%81/" term="取证" label="取证" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%8F%96%E8%AF%81/" term="取证" label="取证" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/linux/" term="Linux" label="Linux" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Linux Dwm 关于部分问题的解决方案</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/solutions-to-some-problems-with-linux-and-dwm.html" />
+            <id>https://blog.zjun.info/2020/solutions-to-some-problems-with-linux-and-dwm.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-04-12T12:50:05&#43;00:00</published>
+            
+            <summary type="html">记录 Archlinux 使用 Dwm 窗口管理器的一些重要的设置和部分解决方案，当然大部分的东西都来自ArchWiki。部分是个人经验，为了日后方便查阅，所以简单记录一下。 0x01 java 程序显示异……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/linux/" term="Linux" label="Linux" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/linux/" term="Linux" label="Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/archlinux/" term="Archlinux" label="Archlinux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/dwm/" term="Dwm" label="Dwm" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">记 2018 年网鼎杯的两个 Web</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/wangdingcup-2018-web.html" />
+            <id>https://blog.zjun.info/2020/wangdingcup-2018-web.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-04-09T12:50:05&#43;00:00</published>
+            
+            <summary type="html">今年的网鼎杯也快要来了，就想找上一届的 ctf 题目来看看，正好发现buuctf上面有三个 web (Fakebook，Comment，Unfinish)，但最后一题不知道是我……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/php/" term="PHP" label="PHP" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" term="反序列化漏洞" label="反序列化漏洞" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/writeup/" term="WriteUp" label="WriteUp" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" term="代码审计" label="代码审计" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/sql-%E6%B3%A8%E5%85%A5/" term="SQL 注入" label="SQL 注入" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E7%BD%91%E9%BC%8E%E6%9D%AF/" term="网鼎杯" label="网鼎杯" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">记录几个实战 Sql 注入绕过</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/record-several-actual-sql-bypasses.html" />
+            <id>https://blog.zjun.info/2020/record-several-actual-sql-bypasses.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-03-25T12:50:05&#43;00:00</published>
+            
+            <summary type="html">前段时间的几次渗透测试中有几个有意思的 sql 注入，记录一下注入的绕过，网站地址及部分信息都有模糊处理，并已反映给相关单位。 0x01 案例一 绕安全狗 加 &#39; ，报错，连 sql 语句都给了……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/web-%E6%B8%97%E9%80%8F/" term="Web 渗透" label="Web 渗透" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%AE%89%E5%85%A8%E7%8B%97/" term="安全狗" label="安全狗" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/sql-%E6%B3%A8%E5%85%A5/" term="SQL 注入" label="SQL 注入" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">php_bugs 代码审计</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/php-bugs-code-audit.html" />
+            <id>https://blog.zjun.info/2020/php-bugs-code-audit.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-03-12T12:50:05&#43;00:00</published>
+            
+            <summary type="html">简单的 php_bugs 代码审计。 所有代码均来自：https://github.com/bowu678/php_bugs 0x01 extract 变量覆盖 1 2 3 4 5 6 7 8 9 10 11 12 13 &amp;lt;?php show_source(__FILE__); $flag=&amp;#39;xxx&amp;#39;; extract($_GET); if(isset($shiyan)) { $content=trim(file_get_contents($flag)); if($shiyan==$content) {……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" term="代码审计" label="代码审计" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" term="代码审计" label="代码审计" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/php/" term="PHP" label="PHP" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Dwm 和 i3 的一些配置</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2020/some-configurations-of-dwm-and-i3.html" />
+            <id>https://blog.zjun.info/2020/some-configurations-of-dwm-and-i3.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2020-01-15T12:50:05&#43;00:00</published>
+            
+            <summary type="html">i3 使用了快 2 个月，现换成了我更喜欢的 dwm 。i3和dwm都放在 github ，包括常用依赖，及字体等。 0x01 dwm dwm是使用 c 编写的一个超级轻量的窗口管理器，其源码不超过 2000 行。不同与……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/linux/" term="Linux" label="Linux" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/linux/" term="Linux" label="Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/archlinux/" term="Archlinux" label="Archlinux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/dwm/" term="Dwm" label="Dwm" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/i3/" term="i3" label="i3" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E5%99%A8/" term="窗口管理器" label="窗口管理器" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Ueditor 漏洞导致 Getshell</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2019/ueditor-vulnerability-causes-getshell.html" />
+            <id>https://blog.zjun.info/2019/ueditor-vulnerability-causes-getshell.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2019-12-20T12:50:05&#43;00:00</published>
+            
+            <summary type="html">聊聊最近用到的 ueditor 其中的几个漏洞。 0x01 文件读取漏洞 file 目录文件读取：http://www.xxxx.com/ueditor/net/controller.ashx?a……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/web-%E6%B8%97%E9%80%8F/" term="Web 渗透" label="Web 渗透" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ueditor/" term="Ueditor" label="Ueditor" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/" term="文件上传" label="文件上传" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/xss/" term="XSS" label="XSS" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/getshell/" term="Getshell" label="Getshell" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">EIS 2019 CTF 部分 WriteUp</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2019/eis-ctf-2019-writeup.html" />
+            <id>https://blog.zjun.info/2019/eis-ctf-2019-writeup.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2019-11-21T12:50:05&#43;00:00</published>
+            
+            <summary type="html">这些题开始做的时候感觉挺难的，特别是 misc 部分的根本没有思路，后面千幸万苦搞出来的，其实解题简单主要是思路。 0x01 misc1 下载一个 txt 文件，打开后乱码，用 hex 打开后，编码 ASCII 切换为……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/eis-2019/" term="EIS 2019" label="EIS 2019" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/writeup/" term="WriteUp" label="WriteUp" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">CISCN 2019 华北赛区 Day1 Web2 ikun</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2019/ciscn2019-day1-web2-ikun.html" />
+            <id>https://blog.zjun.info/2019/ciscn2019-day1-web2-ikun.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2019-10-17T12:50:05&#43;00:00</published>
+            
+            <summary type="html">地址：https://buuoj.cn 考点： 逻辑漏洞 JWT 未授权访问 python 反序列化 看到主页，一定要买到 lv6 很多还有下一页，点击下一页后发现 url 的改变 1 http://4cf0b42f-4999-42cb-8ea4-8be1be09e6ad.node3.buuoj.cn/shop?page=2 于是测试了一下，总共……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ctf/" term="CTF" label="CTF" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/ciscn-2019/" term="CISCN 2019" label="CISCN 2019" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/writeup/" term="WriteUp" label="WriteUp" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/jwt/" term="JWT" label="JWT" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/python/" term="Python" label="Python" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E6%BC%8F%E6%B4%9E/" term="反序列化漏洞" label="反序列化漏洞" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+        <entry>
+            <title type="text">Linux 上使用 aircrack-ng 破解 WIFI</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2019/use-aircrack-ng-to-crack-wifi-on-linux.html" />
+            <id>https://blog.zjun.info/2019/use-aircrack-ng-to-crack-wifi-on-linux.html</id>
+            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <published>2019-09-21T12:50:05&#43;00:00</published>
+            
+            <summary type="html">这是一篇写于 2018 年的文章，首发于 CSDN： https://blog.csdn.net/qq_43760866/article/details/86773003。 使……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/linux/" term="Linux" label="Linux" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E7%A0%B4%E8%A7%A3-wifi/" term="破解 WIFI" label="破解 WIFI" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/%E6%97%A0%E7%BA%BF%E6%B8%97%E9%80%8F/" term="无线渗透" label="无线渗透" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
+</feed>
