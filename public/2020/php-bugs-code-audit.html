@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="zjun" /><meta name="description" content="简单的 php_bugs 代码审计。 所有代码均来自：https://github.com/bowu678/php_bugs 0x01 extract 变量覆盖 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;?php show_source(__FILE__); $flag=&#39;xxx&#39;; extract($_GET); if(isset($shiyan)) { $content=trim(file_get_contents($flag)); if($shiyan==$content) {……" />
+    <meta name="author" content="zjun" /><meta name="description" content="简单的 php_bugs 代码审计。 所有代码均来自：https://github.com/bowu678/php_bugs 0x01 extract 变量覆盖 &lt;?php show_source(__FILE__); $flag=&#39;xxx&#39;; extract($_GET); if(isset($shiyan)) { $content=trim(file_get_contents($flag)); if($shiyan==$content) { echo &#39;ctf{xxx}&#39;; } else { echo &#39;Oh.no&#39;; } } ?&gt;……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#fff" />
@@ -60,10 +60,10 @@
         "dateModified": "2022-03-11T12:39:16+08:00",
         "url": "https://blog.zjun.info/2020/php-bugs-code-audit.html",
         "headline": "php_bugs 代码审计",
-        "description": "简单的 php_bugs 代码审计。 所有代码均来自：https://github.com/bowu678/php_bugs 0x01 extract 变量覆盖 1 2 3 4 5 6 7 8 9 10 11 12 13 \u003c?php show_source(__FILE__); $flag='xxx'; extract($_GET); if(isset($shiyan)) { $content=trim(file_get_contents($flag)); if($shiyan==$content) {……",
+        "description": "简单的 php_bugs 代码审计。 所有代码均来自：https://github.com/bowu678/php_bugs 0x01 extract 变量覆盖 \u003c?php show_source(__FILE__); $flag='xxx'; extract($_GET); if(isset($shiyan)) { $content=trim(file_get_contents($flag)); if($shiyan==$content) { echo 'ctf{xxx}'; } else { echo 'Oh.no'; } } ?\u003e……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1847 ,
+        "wordCount":  1715 ,
         "image": "https://blog.zjun.info/icons/apple-touch-icon.png",
         "publisher": {
             "@type": "Organization",
@@ -92,7 +92,7 @@
 
 
 <meta property="og:title" content="php_bugs 代码审计" />
-<meta property="og:description" content="简单的 php_bugs 代码审计。 所有代码均来自：https://github.com/bowu678/php_bugs 0x01 extract 变量覆盖 1 2 3 4 5 6 7 8 9 10 11 12 13 &lt;?php show_source(__FILE__); $flag=&#39;xxx&#39;; extract($_GET); if(isset($shiyan)) { $content=trim(file_get_contents($flag)); if($shiyan==$content) {……" />
+<meta property="og:description" content="简单的 php_bugs 代码审计。 所有代码均来自：https://github.com/bowu678/php_bugs 0x01 extract 变量覆盖 &lt;?php show_source(__FILE__); $flag=&#39;xxx&#39;; extract($_GET); if(isset($shiyan)) { $content=trim(file_get_contents($flag)); if($shiyan==$content) { echo &#39;ctf{xxx}&#39;; } else { echo &#39;Oh.no&#39;; } } ?&gt;……" />
 <meta property="og:url" content="https://blog.zjun.info/2020/php-bugs-code-audit.html" />
 <meta property="og:site_name" content="zjun&#39;s blog" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://blog.zjun.info/icons/apple-touch-icon.png" />
@@ -281,24 +281,7 @@
                 <p>简单的 php_bugs 代码审计。</p>
 <p>所有代码均来自：<a href="https://github.com/bowu678/php_bugs" target="_blank" rel="noopener">https://github.com/bowu678/php_bugs</a></p>
 <h2 id="0x01-extract-变量覆盖"><a href="#0x01-extract-变量覆盖" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x01-extract-变量覆盖" class="headings">0x01 extract 变量覆盖</a></h2>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="nx">show_source</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$flag</span><span class="o">=</span><span class="s1">&#39;xxx&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="nx">extract</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">);</span>
@@ -311,57 +294,24 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>当 <code>$shiyan==$content</code> 时输出 <code>flag</code> ， <code>$flag</code> 赋给 <code>$content</code> ，这里不知道 <code>$flag</code> 的值，所以可以 <code>get</code> 一个 <code>flag</code> 变量覆盖 <code>$flag</code> ，当 <code>get</code> 的 <code>flag</code> 等于 <code>get</code> 的 <code>shiyan</code> 时即可输出 <code>flag</code> 。
+</span></span></span></code></pre></div><p>当 <code>$shiyan==$content</code> 时输出 <code>flag</code> ， <code>$flag</code> 赋给 <code>$content</code> ，这里不知道 <code>$flag</code> 的值，所以可以 <code>get</code> 一个 <code>flag</code> 变量覆盖 <code>$flag</code> ，当 <code>get</code> 的 <code>flag</code> 等于 <code>get</code> 的 <code>shiyan</code> 时即可输出 <code>flag</code> 。
 构造 <code>payload</code> :
 <code>?shiyan=&amp;flag=</code></p>
 <h2 id="0x02-绕过过滤的空白字符"><a href="#0x02-绕过过滤的空白字符" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x02-绕过过滤的空白字符" class="headings">0x02 绕过过滤的空白字符</a></h2>
 <p>代码挺长的，就不放了，自行在 <code>github</code> 原项目上看。
 主要满足四个点：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">is_numeric</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="k">false</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">is_numeric</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">])</span> <span class="o">==</span> <span class="k">false</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$req</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nx">strval</span><span class="p">(</span><span class="nx">intval</span><span class="p">(</span><span class="nv">$req</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nx">intval</span><span class="p">(</span><span class="nv">$req</span><span class="p">[</span><span class="s2">&#34;number&#34;</span><span class="p">])</span> <span class="o">==</span> <span class="nx">intval</span><span class="p">(</span><span class="nx">strrev</span><span class="p">(</span><span class="nv">$req</span><span class="p">[</span><span class="s2">&#34;number&#34;</span><span class="p">])</span>
 </span></span><span class="line"><span class="cl"><span class="nx">is_palindrome_number</span><span class="p">(</span><span class="nv">$req</span><span class="p">[</span><span class="s2">&#34;number&#34;</span><span class="p">])</span> <span class="o">==</span> <span class="k">false</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>即可输出 <code>flag</code> ，构造如下：</p>
+</span></span></code></pre></div><p>即可输出 <code>flag</code> ，构造如下：</p>
 <ul>
 <li>第一点<code>is_numeric()</code>判断变量是否为<code>数字</code>或<code>数字字符串</code>，可以检查<code>10 进制</code>或<code>16 进制</code>， <code>is_numeric()</code>可以用空字符绕过，<code>%00</code>放在数值<code>前、后</code>都可以判断为非数值，而<code>%20</code>空字符只能放在数值后。</li>
 <li>第三点该<code>整数值</code>等于其<code>反转整数值</code>，第四点不为<code>回文数</code>，这两者看似矛盾，实则有多种绕过方法。</li>
 </ul>
 <p><strong>法一</strong></p>
 <p>来自<a href="https://github.com/bowu678/php_bugs" target="_blank" rel="noopener">php_bugs</a>，先满足 <code>第三点</code> 回文数再 <code>Fuzzing</code> 绕过 <code>第四点</code> ，简化后端代码：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">is_palindrome_number</span><span class="p">(</span><span class="nv">$number</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nv">$number</span> <span class="o">=</span> <span class="nx">strval</span><span class="p">(</span><span class="nv">$number</span><span class="p">);</span> <span class="c1">//strval — 获取变量的字符串值
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -378,26 +328,13 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$a</span> <span class="o">=</span> <span class="nx">trim</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]);</span>
 </span></span><span class="line"><span class="cl"><span class="nx">var_dump</span><span class="p">((</span><span class="nv">$a</span><span class="o">==</span><span class="nx">strval</span><span class="p">(</span><span class="nx">intval</span><span class="p">(</span><span class="nv">$a</span><span class="p">)))</span><span class="o">&amp;</span><span class="p">(</span><span class="nx">intval</span><span class="p">(</span><span class="nv">$a</span><span class="p">)</span><span class="o">==</span><span class="nx">intval</span><span class="p">(</span><span class="nx">strrev</span><span class="p">(</span><span class="nv">$a</span><span class="p">)))</span><span class="o">&amp;!</span><span class="nx">is_palindrome_number</span><span class="p">(</span><span class="nv">$a</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>将 <code>数值</code> 转成 <code>2位 16 进制</code> 加在 <code>回文数</code>  <code>191</code> 前面， <code>Fuzzing</code> 如下：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span></span></code></pre></div><p>将 <code>数值</code> 转成 <code>2位 16 进制</code> 加在 <code>回文数</code>  <code>191</code> 前面， <code>Fuzzing</code> 如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&#34;http://arch/php_bugs/02.php?number=</span><span class="si">{}</span><span class="s2">191&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%%%02X</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">i</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s1">&#39;1&#39;</span> <span class="ow">in</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;</span><span class="si">%%%02X</span><span class="s2">&#34;</span><span class="o">%</span><span class="n">i</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>输出结果如下：</p>
+</span></span></code></pre></div><p>输出结果如下：</p>
 <p><code>%0C</code></p>
 <p><code>%2B</code></p>
 <p>即可构成 <code>payload</code> ：
@@ -415,55 +352,21 @@
 <a href="https://blog.csdn.net/qq_44105778/article/details/88955564" target="_blank" rel="noopener">法二、三来源</a></p>
 <h2 id="0x03-多重加密"><a href="#0x03-多重加密" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x03-多重加密" class="headings">0x03 多重加密</a></h2>
 <p><code>源码</code> 中给出：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$login</span> <span class="o">=</span> <span class="nx">unserialize</span><span class="p">(</span><span class="nx">gzuncompress</span><span class="p">(</span><span class="nx">base64_decode</span><span class="p">(</span><span class="nv">$requset</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">])));</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$login</span> <span class="o">=</span> <span class="nx">unserialize</span><span class="p">(</span><span class="nx">gzuncompress</span><span class="p">(</span><span class="nx">base64_decode</span><span class="p">(</span><span class="nv">$requset</span><span class="p">[</span><span class="s1">&#39;token&#39;</span><span class="p">])));</span>
 </span></span><span class="line"><span class="cl"><span class="c1">//gzuncompress:进行字符串压缩
 </span></span></span><span class="line"><span class="cl"><span class="c1">//unserialize: 将已序列化的字符串还原回 PHP 的值
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nv">$login</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;ichunqiu&#39;</span><span class="p">){</span><span class="k">echo</span> <span class="nv">$flag</span><span class="p">;}</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>有了 <code>加密</code> 方式，我们 <code>解密</code> 一下即可</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span></code></pre></div><p>有了 <code>加密</code> 方式，我们 <code>解密</code> 一下即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$arr</span> <span class="o">=</span> <span class="k">array</span><span class="p">([</span><span class="s1">&#39;user&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;ichunqiu&#39;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$token</span> <span class="o">=</span> <span class="nx">base64_encode</span><span class="p">(</span><span class="nx">gzcompress</span><span class="p">(</span><span class="nx">serialize</span><span class="p">(</span><span class="nv">$arr</span><span class="p">)));</span>
 </span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nv">$token</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>eJxLtDK0qs60MrBOAuJaAB5uBBQ=</code></p>
+</span></span></span></code></pre></div><p><code>eJxLtDK0qs60MrBOAuJaAB5uBBQ=</code></p>
 <h2 id="0x04-sql-注入_with-rollup-绕过"><a href="#0x04-sql-注入_with-rollup-绕过" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x04-sql-注入_with-rollup-绕过" class="headings">0x04 SQL 注入_WITH ROLLUP 绕过</a></h2>
 <p>这个题来自实验吧 <code>因缺思汀的绕过</code></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$filter</span> <span class="o">=</span> <span class="s2">&#34;and|select|from|where|union|join|sleep|benchmark|,|\(|\)&#34;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$filter</span> <span class="o">=</span> <span class="s2">&#34;and|select|from|where|union|join|sleep|benchmark|,|\(|\)&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 过滤的字符
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$sql</span><span class="o">=</span><span class="s2">&#34;SELECT * FROM interest WHERE uname = &#39;</span><span class="si">{</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;uname&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 执行的 sql 语句
@@ -471,55 +374,9 @@
 </span></span><span class="line"><span class="cl"><span class="c1">// 返回结果集中行的数目
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$key</span><span class="p">[</span><span class="s1">&#39;pwd&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;pwd&#39;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 提交的密码与数据库中的密码相等输出 flag
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>$_POST</code> 输入通过定义的 <code>AttackFilter()</code> 函数过滤导致不能使用常规 <code>sql 注入</code> ，这里的思路是 <code>select</code> 过程中用 <code>group by with rollup</code> 方法进行插入查询。</p>
+</span></span></span></code></pre></div><p><code>$_POST</code> 输入通过定义的 <code>AttackFilter()</code> 函数过滤导致不能使用常规 <code>sql 注入</code> ，这里的思路是 <code>select</code> 过程中用 <code>group by with rollup</code> 方法进行插入查询。</p>
 <p>先来看看 <code>group by with rollup</code> 统计方法有什么作用</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">MariaDB</span><span class="w"> </span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">test</span><span class="p">;</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">MariaDB</span><span class="w"> </span><span class="p">[</span><span class="n">test</span><span class="p">]</span><span class="o">&gt;</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">test</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">-------+--------+
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w"> </span><span class="k">user</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="n">pwd</span><span class="w">    </span><span class="o">|</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">-------+--------+
@@ -559,9 +416,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">|</span><span class="w"> </span><span class="k">admin</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="o">|</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="o">+</span><span class="c1">-------+-----+
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">001</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span><span class="w">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>limit 1</code> 是指只查询 <code>一行</code> ， <code>offset 1</code> 指查询某一行的内容，不同的数字出现的是不同行的内容</p>
+</span></span></span></code></pre></div><p><code>limit 1</code> 是指只查询 <code>一行</code> ， <code>offset 1</code> 指查询某一行的内容，不同的数字出现的是不同行的内容</p>
 <p>当用 <code>with rollup</code> 方法的时候，会在数据库的最后一行生成一个 <code>密码</code> 为 <code>NULL</code> 的字段，在查询的时候就可以想想办法让 <code>pwd</code> 为空，而 <code>user</code> 也是存在的，又有 <code>mysql_num_rows($query) == 1</code> ，所以可以构造 <code>payload</code> ：</p>
 <p><code>admin' or 1=1 group by pwd with rollup limit 1 offset x #</code></p>
 <p>查询语句就是：</p>
@@ -571,44 +426,17 @@
 <p><a href="https://blog.csdn.net/qq_35078631/article/details/54772798" target="_blank" rel="noopener">实验吧 因缺思汀的绕过 By Assassin（with rollup 统计）</a></p>
 <h2 id="0x05-ereg-正则00-截断"><a href="#0x05-ereg-正则00-截断" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x05-ereg-正则00-截断" class="headings">0x05 ereg 正则%00 截断</a></h2>
 <p>直接看关键点审计</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">ereg</span> <span class="p">(</span><span class="s2">&#34;^[a-zA-Z0-9]+$&#34;</span><span class="p">,</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">])</span> <span class="o">===</span> <span class="k">FALSE</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">ereg</span> <span class="p">(</span><span class="s2">&#34;^[a-zA-Z0-9]+$&#34;</span><span class="p">,</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">])</span> <span class="o">===</span> <span class="k">FALSE</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 要求 GET 密码只能是大小写字母和数字
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">strlen</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="o">&amp;&amp;</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">9999999</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// 要求 GET 密码长度小于 8 并且值要大于 9999999
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">strpos</span> <span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">],</span> <span class="s1">&#39;*-*&#39;</span><span class="p">)</span> <span class="o">!==</span> <span class="k">FALSE</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// strpos()：查找字符串首次出现的位置
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>第二点</code> 可以利用 <code>科学计数法</code> 的方式表示。</p>
+</span></span></span></code></pre></div><p><code>第二点</code> 可以利用 <code>科学计数法</code> 的方式表示。</p>
 <p><code>第三点</code>  <code>GET 密码</code> 中要包括 <code>*-*</code> ，但是前面的 <code>ereg()</code> 过滤了特殊字符，这时候可以用 <code>%00</code> 截断， <code>ereg()</code> 读到 <code>%00</code> 的时候就截止了，所以构造 <code>payload</code> ：</p>
 <p><code>1e9%00*-*</code></p>
 <h2 id="0x06-strcmp-比较字符串"><a href="#0x06-strcmp-比较字符串" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x06-strcmp-比较字符串" class="headings">0x06 strcmp 比较字符串</a></h2>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="nx">show_source</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$flag</span> <span class="o">=</span> <span class="s2">&#34;flag&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]))</span> <span class="p">{</span>
@@ -619,29 +447,10 @@
 </span></span><span class="line"><span class="cl">        <span class="k">print</span> <span class="s1">&#39;No&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>strcmp()</code> 期望传入类型是字符串类型，在 <code>5.3</code> 之前的 <code>php</code> 版本中若传入其他类型将会报错并返回 <code>0</code> ， <code>5.3</code> 之后报错不返回任何值，但如果传入 <code>数组</code> 的话，就会返回 <code>NULL</code> ，这里的判断是 <code>弱等于</code> ， <code>NULL==0</code> 是 <code>bool(true)</code> ，所以有构造 <code>payload</code> ：</p>
+</span></span></span></code></pre></div><p><code>strcmp()</code> 期望传入类型是字符串类型，在 <code>5.3</code> 之前的 <code>php</code> 版本中若传入其他类型将会报错并返回 <code>0</code> ， <code>5.3</code> 之后报错不返回任何值，但如果传入 <code>数组</code> 的话，就会返回 <code>NULL</code> ，这里的判断是 <code>弱等于</code> ， <code>NULL==0</code> 是 <code>bool(true)</code> ，所以有构造 <code>payload</code> ：</p>
 <p><code>?a[]=1</code></p>
 <h2 id="0x07-sha-函数比较绕过"><a href="#0x07-sha-函数比较绕过" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x07-sha-函数比较绕过" class="headings">0x07 sha() 函数比较绕过</a></h2>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="nx">show_source</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$flag</span> <span class="o">=</span> <span class="s2">&#34;flag&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">])</span> <span class="k">and</span> <span class="nx">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">]))</span> <span class="p">{</span>
@@ -654,30 +463,11 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="k">else</span>
 </span></span><span class="line"><span class="cl">    <span class="k">echo</span> <span class="s1">&#39;&lt;p&gt;Login first!&lt;/p&gt;&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>$_GET['name'] ！= $_GET['password']</code> 同时满足 <code>sha1($_GET['name']) === sha1($_GET['password']</code></p>
+</span></span></span></code></pre></div><p><code>$_GET['name'] ！= $_GET['password']</code> 同时满足 <code>sha1($_GET['name']) === sha1($_GET['password']</code></p>
 <p><code>sha1()</code> 默认的传入类型是 <code>字符串</code> 类型，若传入 <code>数组</code> 会返回 <code>false</code> ，这里的判断是 <code>强等</code> ，需要构造 <code>username</code> 和 <code>password</code> 既不相等，又同样要是 <code>数组类型</code> ，构造 payload：</p>
 <p><code>?name[]=a&amp;password[]=b</code></p>
 <h2 id="0x08-session-验证绕过"><a href="#0x08-session-验证绕过" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x08-session-验证绕过" class="headings">0x08 SESSION 验证绕过</a></h2>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="nx">show_source</span><span class="p">(</span><span class="no">__FILE__</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$flag</span> <span class="o">=</span> <span class="s2">&#34;flag&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -690,9 +480,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="nx">mt_srand</span><span class="p">((</span><span class="nx">microtime</span><span class="p">()</span> <span class="o">^</span> <span class="nx">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">))</span> <span class="o">%</span> <span class="nx">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span> <span class="o">+</span> <span class="nx">rand</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>重点在于 <code>$_GET['password'] == $_SESSION['password']</code> ，这就很简单了，只需要 <code>GET</code> 值与 <code>SESSION</code> 相等，</p>
+</span></span></span></code></pre></div><p>重点在于 <code>$_GET['password'] == $_SESSION['password']</code> ，这就很简单了，只需要 <code>GET</code> 值与 <code>SESSION</code> 相等，</p>
 <p>构造 <code>payload</code> ：</p>
 <p><code>?password=</code></p>
 <p>然后将 <code>cookies</code> 清空即可。</p>

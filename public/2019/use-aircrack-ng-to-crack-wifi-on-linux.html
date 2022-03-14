@@ -63,7 +63,7 @@
         "description": "这是一篇写于 2018 年的文章，首发于 CSDN： https://blog.csdn.net/qq_43760866/article/details/86773003。 使……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  839 ,
+        "wordCount":  834 ,
         "image": ["https://oss.zjun.info/zjun.info/aircrak-ng-linux-1.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-2.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-3.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-4.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-5.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-6.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-7.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-8.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-9.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-10.png"],
         "publisher": {
             "@type": "Organization",
@@ -280,37 +280,16 @@
 <h2 id="抓包"><a href="#抓包" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:抓包" class="headings">抓包</a></h2>
 <p>虚拟机读取不了笔记本的网卡信息，推荐使用物理机进行操作，或者购买 <code>wifi</code> 接收器
 若无此工具要先安装</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt-get install aircrack-ng
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>首先开启网卡监听模式</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo airmon-ng start wlp2s0
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>wlp2s0</code> 为本机网卡名，可用 <code>ifconfig</code> 或 <code>iwconfig</code> 查看</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt-get install aircrack-ng
+</span></span></code></pre></div><p>首先开启网卡监听模式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo airmon-ng start wlp2s0
+</span></span></code></pre></div><p><code>wlp2s0</code> 为本机网卡名，可用 <code>ifconfig</code> 或 <code>iwconfig</code> 查看</p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-1.png" alt="aircrak-ng-linux-1"></p>
 <p>此时卡网被改了名字，上图可见，或则同样 <code>ifconfig</code> 或 <code>iwconfig</code> 查看</p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-2.png" alt="aircrak-ng-linux-2"></p>
 <p>然后扫描附近 <code>wifi</code> 信号</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo airodump-ng wlp2s0mon
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-3.png" alt="aircrak-ng-linux-3"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo airodump-ng wlp2s0mon
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-3.png" alt="aircrak-ng-linux-3"></p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-4.png" alt="aircrak-ng-linux-4"></p>
 <p><code>注</code> ：airodump-ng &lt;你的网卡名称&gt;
 • BSSID 是 AP 端的 MAC 地址
@@ -330,25 +309,11 @@
 <p>在你的抓取握手包的存放目录会生成 4 个文件，握手包文件的拓展名为 <code>.cap</code></p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-8.png" alt="aircrak-ng-linux-8"></p>
 <p>现在可关闭监听模式，不关也无影响</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo airmon-ng stop wlp2s0mon
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-9.png" alt="aircrak-ng-linux-9"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo airmon-ng stop wlp2s0mon
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-9.png" alt="aircrak-ng-linux-9"></p>
 <p>并且重启网卡服务</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start NetworkManager.service
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><h2 id="爆破"><a href="#爆破" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:爆破" class="headings">爆破</a></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systemctl start NetworkManager.service
+</span></span></code></pre></div><h2 id="爆破"><a href="#爆破" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:爆破" class="headings">爆破</a></h2>
 <p>最后使用字典进行暴力破解，当密码破解成功时，会显示 <code>KEY FOUND!</code> 字样，中括号为 <code>wifi</code> 密码。</p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-10.png" alt="aircrak-ng-linux-10"></p>
 <p><code>注</code> ：aircrack-ng -w &lt;字典路径&gt; &lt;握手包路径&gt;</p>

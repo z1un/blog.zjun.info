@@ -30,7 +30,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" media="print" onload="this.media='all'" />
         <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB&#43;Garamond:ital,wght@0,400;0,500;0,700;1,400;1,700&amp;family=Noto&#43;Serif&#43;SC:wght@400;500;700&amp;family=Source&#43;Code&#43;Pro:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" /></noscript>
 
-    <meta name="author" content="zjun" /><meta name="description" content="内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令： 1 2 3 4 5 6 net group &#34;domain controllers&#34; /domain net group &#34;domain computers&#34; /domain net group &#34;domain admins&#34; /domain net group &#34;domain users&#34; /domain net group……" />
+    <meta name="author" content="zjun" /><meta name="description" content="内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令： net group &#34;domain controllers&#34; /domain net group &#34;domain computers&#34; /domain net group &#34;domain admins&#34; /domain net group &#34;domain users&#34; /domain net group &#34;Enterprise Admins&#34; /domain ... 原因……" />
 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#fff" />
@@ -60,10 +60,10 @@
         "dateModified": "2022-03-11T12:39:16+08:00",
         "url": "https://blog.zjun.info/2022/bypass-domain-sensitive-group-acl-information-query.html",
         "headline": "Bypass 域敏感组访问控制信息查询",
-        "description": "内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令： 1 2 3 4 5 6 net group \"domain controllers\" /domain net group \"domain computers\" /domain net group \"domain admins\" /domain net group \"domain users\" /domain net group……",
+        "description": "内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令： net group \"domain controllers\" /domain net group \"domain computers\" /domain net group \"domain admins\" /domain net group \"domain users\" /domain net group \"Enterprise Admins\" /domain ... 原因……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1131 ,
+        "wordCount":  1082 ,
         "image": ["https://oss.zjun.info/zjun.info/202202231403595.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202231419831.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202231522399.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202231736163.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202231736435.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202231735566.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202231803679.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202232052784.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202232057500.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202232058782.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202232112634.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA","https://oss.zjun.info/zjun.info/202202232114414.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA"],
         "publisher": {
             "@type": "Organization",
@@ -93,7 +93,7 @@
 
 
 <meta property="og:title" content="Bypass 域敏感组访问控制信息查询" />
-<meta property="og:description" content="内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令： 1 2 3 4 5 6 net group &#34;domain controllers&#34; /domain net group &#34;domain computers&#34; /domain net group &#34;domain admins&#34; /domain net group &#34;domain users&#34; /domain net group……" />
+<meta property="og:description" content="内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令： net group &#34;domain controllers&#34; /domain net group &#34;domain computers&#34; /domain net group &#34;domain admins&#34; /domain net group &#34;domain users&#34; /domain net group &#34;Enterprise Admins&#34; /domain ... 原因……" />
 <meta property="og:url" content="https://blog.zjun.info/2022/bypass-domain-sensitive-group-acl-information-query.html" />
 <meta property="og:site_name" content="zjun&#39;s blog" />
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://oss.zjun.info/zjun.info/202202231403595.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" />
@@ -280,25 +280,13 @@
   </ol>
 </nav><div class="post-body e-content">
                 <p>内网域环境中，很多时候我们拿到的用户没有内网查询的权限，显示「发生系统错误，拒绝访问」比如以下这些命令：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">net group <span class="s2">&#34;domain controllers&#34;</span> /domain
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">net group <span class="s2">&#34;domain controllers&#34;</span> /domain
 </span></span><span class="line"><span class="cl">net group <span class="s2">&#34;domain computers&#34;</span> /domain
 </span></span><span class="line"><span class="cl">net group <span class="s2">&#34;domain admins&#34;</span> /domain
 </span></span><span class="line"><span class="cl">net group <span class="s2">&#34;domain users&#34;</span> /domain
 </span></span><span class="line"><span class="cl">net group <span class="s2">&#34;Enterprise Admins&#34;</span> /domain
 </span></span><span class="line"><span class="cl">...
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/202202231403595.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223140227556"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/202202231403595.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223140227556"></p>
 <p>原因在于域管理员设置了访问控制 (ACL)，禁止指定用户对域内敏感组的读取，以此对域安全进行加固。</p>
 <p>这里的敏感组包括，但不限于</p>
 <ul>
@@ -330,39 +318,13 @@
 <p>通过 <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/adexplorer" target="_blank" rel="noopener">ADExplorer</a> 虽然可以连接成功，但是里面对应组的信息却看不到</p>
 <p><img src="https://oss.zjun.info/zjun.info/202202232052784.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223205222752"></p>
 <p>利用 ldapsearch 查询，ldapsearch 是 kali 内置的工具，在 Ubuntu 或 Mac 下安装如下：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Ubuntu 用户安装</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># Ubuntu 用户安装</span>
 </span></span><span class="line"><span class="cl">sudo apt install ldap-utils
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># mac 用户安装</span>
 </span></span><span class="line"><span class="cl">brew install ldapvi
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>查询命令如下，部分可用，但是当查询对应组信息的时候就不行</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查询所有域用户</span>
+</span></span></code></pre></div><p>查询命令如下，部分可用，但是当查询对应组信息的时候就不行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查询所有域用户</span>
 </span></span><span class="line"><span class="cl">ldapsearch -x -H ldap://172.16.86.136:389 -D <span class="s2">&#34;CN=user1,CN=Users,DC=zjun,DC=com&#34;</span> -w P@ssw0rd -b <span class="s2">&#34;DC=zjun,DC=com&#34;</span> <span class="s2">&#34;(&amp;(objectClass=user)(objectCategory=person))&#34;</span> dn
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 查询域中所有机器</span>
@@ -373,33 +335,13 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 查询 domain admins 组</span>
 </span></span><span class="line"><span class="cl">ldapsearch -x -H ldap://172.16.86.136:389 -D <span class="s2">&#34;CN=user1,CN=Users,DC=zjun,DC=com&#34;</span> -w P@ssw0rd -b <span class="s1">&#39;cn=domain admins,cn=users,dc=zjun,dc=com&#39;</span> 
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>查询域用户的时候成功</p>
+</span></span></code></pre></div><p>查询域用户的时候成功</p>
 <p><img src="https://oss.zjun.info/zjun.info/202202232057500.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223205730361"></p>
 <p>查询 <code>domain admins</code> 组没有回显</p>
 <p><img src="https://oss.zjun.info/zjun.info/202202232058782.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223205846726"></p>
 <h2 id="利用-adfind-或-powerview-脚本查询"><a href="#利用-adfind-或-powerview-脚本查询" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:利用-adfind-或-powerview-脚本查询" class="headings">利用 Adfind 或 PowerView 脚本查询</a></h2>
 <h3 id="通过-adfindhttpwwwjoewarenetfreetoolstoolsadfind-查询"><a href="#通过-adfindhttpwwwjoewarenetfreetoolstoolsadfind-查询" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:通过-adfindhttpwwwjoewarenetfreetoolstoolsadfind-查询" class="headings">通过 <a href="http://www.joeware.net/freetools/tools/adfind/" target="_blank" rel="noopener">Adfind</a> 查询</a></h3>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查询域管理员组</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># 查询域管理员组</span>
 </span></span><span class="line"><span class="cl">Adfind.exe -f <span class="s2">&#34;memberof=CN=Domain admins,CN=Users,DC=zjun,DC=com&#34;</span> -dn
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 查询企业管理员组</span>
@@ -413,28 +355,9 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 查询所有用户</span>
 </span></span><span class="line"><span class="cl">Adfind.exe -b <span class="nv">dc</span><span class="o">=</span>zjun,dc<span class="o">=</span>com -f <span class="s2">&#34;objectcategory=user&#34;</span> -dn
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/202202232112634.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223211228528"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/202202232112634.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223211228528"></p>
 <h3 id="通过-powerview-进行查询"><a href="#通过-powerview-进行查询" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:通过-powerview-进行查询" class="headings">通过 PowerView 进行查询</a></h3>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Import-Module</span> <span class="p">.\</span><span class="n">PowerView</span><span class="p">.</span><span class="n">ps1</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># 返回所有用户详细信息</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Get-Netuser</span>
@@ -447,9 +370,7 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># 获取所有域内组和组成员信息</span>
 </span></span><span class="line"><span class="cl"><span class="nb">Get-NetGroup</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/202202232114414.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223211431819"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/202202232114414.png?x-oss-process=image/watermark,size_20,text_emp1bnx6anVuLmluZm8=,color_AAAAAA" alt="image-20220223211431819"></p>
 
             </div>
 

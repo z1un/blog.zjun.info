@@ -63,7 +63,7 @@
         "description": "本文首发于 i 春秋：https://bbs.ichunqiu.com/thread-56889-1-5.html 题目地址：http://www.honeynet.……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  742 ,
+        "wordCount":  733 ,
         "image": ["https://oss.zjun.info/zjun.info/linux-quzhen-1.webp","https://oss.zjun.info/zjun.info/linux-quzhen-2.webp","https://oss.zjun.info/zjun.info/linux-quzhen-3.webp","https://oss.zjun.info/zjun.info/linux-quzhen-4.webp","https://oss.zjun.info/zjun.info/linux-quzhen-5.webp","https://oss.zjun.info/zjun.info/linux-quzhen-6.webp","https://oss.zjun.info/zjun.info/linux-quzhen-7.webp","https://oss.zjun.info/zjun.info/linux-quzhen-8.webp","https://oss.zjun.info/zjun.info/linux-quzhen-9.webp","https://oss.zjun.info/zjun.info/linux-quzhen-10.webp","https://oss.zjun.info/zjun.info/linux-quzhen-11.png","https://oss.zjun.info/zjun.info/linux-quzhen-12.webp","https://oss.zjun.info/zjun.info/linux-quzhen-13.png","https://oss.zjun.info/zjun.info/linux-quzhen-14.webp","https://oss.zjun.info/zjun.info/linux-quzhen-15.png"],
         "publisher": {
             "@type": "Organization",
@@ -274,94 +274,37 @@
 <p>查看题目要求</p>
 <p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-1.webp" alt="linux-quzhen-1"></p>
 <p>下载这三个镜像并将 <code>victoria-v8.sda1.img</code> 挂载到 <code>/mnt</code> 目录下</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mount -o loop victoria-v8.sda1.img /mnt
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>在 <code>/mnt</code> 目录下可以看见</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo mount -o loop victoria-v8.sda1.img /mnt
+</span></span></code></pre></div><p>在 <code>/mnt</code> 目录下可以看见</p>
 <p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-2.webp" alt="linux-quzhen-2"></p>
 <p>首先查看系统版本</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat etc/issue
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-3.webp" alt="linux-quzhen-3"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat etc/issue
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-3.webp" alt="linux-quzhen-3"></p>
 <p>在 <code>var/log</code> 目录下查看 <code>Linux</code> 的版本</p>
 <p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-4.webp" alt="linux-quzhen-4"></p>
 <p>然后制作版本对应的 <code>profile</code> ，可自己手动制作，也可以使用 <code>github</code> 上制作好的
 Github 项目：<a href="https://github.com/volatilityfoundation/profiles" target="_blank" rel="noopener">https://github.com/volatilityfoundation/profiles</a></p>
 <p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-5.webp" alt="linux-quzhen-5"></p>
 <p>下载 <code>debian5010</code> 解压后放在 <code>/volatility/plugins/overlays/linux</code> 目录下</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py --info
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-6.webp" alt="linux-quzhen-6"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py --info
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-6.webp" alt="linux-quzhen-6"></p>
 <p>现在开始分析镜像文件</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py -f /home/reder/Desktop/tools/取证/取证镜像/victoria-v8.memdump.img --profile<span class="o">=</span>LinuxDebian5010x86 linux_psaux
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>可以看见以下的输出</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py -f /home/reder/Desktop/tools/取证/取证镜像/victoria-v8.memdump.img --profile<span class="o">=</span>LinuxDebian5010x86 linux_psaux
+</span></span></code></pre></div><p>可以看见以下的输出</p>
 <p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-7.webp" alt="linux-quzhen-7"></p>
 <p>我们可以发现一个可疑的 <code>nc</code> 连接，连接到 <code>192.168.56.1</code> 端口是 <code>8888</code></p>
 <p>查看网络信息：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py -f /home/reder/Desktop/tools/取证/取证镜像/victoria-v8.memdump.img --profile<span class="o">=</span>LinuxDebian5010x86 linux_netstat
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-8.webp" alt="linux-quzhen-8"></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">TCP 192.168.56.102:25 192.168.56.101:37202 CLOSE sh/2065
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py -f /home/reder/Desktop/tools/取证/取证镜像/victoria-v8.memdump.img --profile<span class="o">=</span>LinuxDebian5010x86 linux_netstat
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-8.webp" alt="linux-quzhen-8"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">TCP 192.168.56.102:25 192.168.56.101:37202 CLOSE sh/2065
 </span></span><span class="line"><span class="cl">TCP 192.168.56.102:25 192.168.56.101:37202 CLOSE sh/2065
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>有两个已经关闭的连接。</p>
+</span></span></code></pre></div><p>有两个已经关闭的连接。</p>
 <p>查看 <code>bash</code> 记录：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py -f /home/reder/Desktop/tools/取证/取证镜像/victoria-v8.memdump.img --profile<span class="o">=</span>LinuxDebian5010x86 linux_bash
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-9.webp" alt="linux-quzhen-9"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python vol.py -f /home/reder/Desktop/tools/取证/取证镜像/victoria-v8.memdump.img --profile<span class="o">=</span>LinuxDebian5010x86 linux_bash
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-9.webp" alt="linux-quzhen-9"></p>
 <p>可以发现复制了 <code>exim4</code> 目录下的所有文件，我们切换至 <code>/mnt/var/log/exim4</code> 目录下，运行 <code>su</code> 后进入，查看 <code>rejectlog</code></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat rejectlog
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-10.webp" alt="linux-quzhen-10"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat rejectlog
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-10.webp" alt="linux-quzhen-10"></p>
 <p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-11.png" alt="linux-quzhen-11"></p>
 <p><img src="https://oss.zjun.info/zjun.info/linux-quzhen-12.webp" alt="linux-quzhen-12"></p>
 <p>日志显示 <code>IP</code>  <code>192.168.56.101</code> 作为发送邮件的主机，结合上面已经关闭的连接，基本表明 <code>192.168.56.101</code> 是一个攻击 <code>IP</code> 。</p>

