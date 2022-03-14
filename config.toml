@@ -794,7 +794,7 @@ uglyURLs = false
     # 是否显示发布时间
     displayPublishedDate = true
     # 发布时间的图标
-    publishedDateIcon = "calendar-alt"
+    publishedDateIcon = "edit"
 
     # 是否显示修改时间
     displayModifiedDate = false
@@ -1218,7 +1218,7 @@ uglyURLs = false
     #      的是一篇更旧的文章。
 
     # 是否开启
-    enablePostNav = true
+    enablePostNav = false
 
     # 是否仅限于相同的文章分区
     postNavInSection = true
