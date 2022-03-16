@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">zjun&#39;s blog</title>
     <subtitle type="html">这是zjun的个人博客，专注于WEB安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。</subtitle>
-    <updated>2022-03-14T21:17:32&#43;08:00</updated>
+    <updated>2022-03-16T19:17:08&#43;08:00</updated>
     <id>https://blog.zjun.info/</id>
     <link rel="alternate" type="text/html" href="https://blog.zjun.info/" />
     <link rel="self" type="application/atom&#43;xml" href="https://blog.zjun.info/atom.xml" />
@@ -18,9 +18,9 @@
     <generator uri="https://gohugo.io/" version="0.94.0">Hugo</generator>
         <entry>
             <title type="text">CVE 2022 0543 Redis Lua 沙盒逃逸 RCE</title>
-            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/CVE-2022-0543.html" />
-            <id>https://blog.zjun.info/2022/CVE-2022-0543.html</id>
-            <updated>2022-03-11T16:33:21&#43;08:00</updated>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/cve-2022-0543.html" />
+            <id>https://blog.zjun.info/2022/cve-2022-0543.html</id>
+            <updated>2022-03-16T19:16:24&#43;08:00</updated>
             <published>2022-03-11T12:04:17&#43;08:00</published>
             
             <summary type="html">巴西研究员 Reginaldo Silva 于 2022 年 3 月 8 日公开披露 1 该漏洞，从他的博客得知 CVE-2022-0543 该 Redis 沙盒逃逸漏洞仅影响 Debian 系的 Linux 发行版本，并非 Redis 本身漏洞。ph 师傅也在其 vulhub 2 项目中更新了该漏洞。 Redis 是……</summary>
@@ -122,9 +122,9 @@
     
         <entry>
             <title type="text">MS14-068 (CVE-2014-6324) 域提权漏洞分析</title>
-            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/MS14-068.html" />
-            <id>https://blog.zjun.info/2022/MS14-068.html</id>
-            <updated>2022-03-11T12:39:16&#43;08:00</updated>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/ms14-068.html" />
+            <id>https://blog.zjun.info/2022/ms14-068.html</id>
+            <updated>2022-03-16T19:16:43&#43;08:00</updated>
             <published>2022-03-01T23:48:16&#43;08:00</published>
             
             <summary type="html">MS14-068 (CVE-2014-6324) 是微软于 2014 年 11 月发布的补丁 (KB3011780) 中修复的一个漏洞，该漏洞允许攻击者以任意用户的权限提升到域管理员帐户权限，漏洞影响 Windows Server 2003 到 Windows Server 2012 R2 期间的 Windows 版本。 若是受影响的 Windows 版……</summary>
