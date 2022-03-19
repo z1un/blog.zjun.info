@@ -15,7 +15,7 @@ jobs:
     - name: 'Building...'
       uses: reuixiy/hugo-deploy@v1
       env:
-        DEPLOY_REPO: z1un/z1un.github.io
+        DEPLOY_REPO: z1un/blog.zjun.info
         DEPLOY_BRANCH: build
         DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
         # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
