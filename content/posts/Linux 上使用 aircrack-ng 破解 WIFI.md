@@ -51,11 +51,12 @@ sudo airodump-ng wlp2s0mon
 ![aircrak-ng-linux-4](https://oss.zjun.info/zjun.info/aircrak-ng-linux-4.png)
 
 `注` ：airodump-ng <你的网卡名称>
-• BSSID 是 AP 端的 MAC 地址
-• PWR 是信号强度，数字越小越好
-• Data 是对应的路由器的在线数据吞吐量，数字越大，数据上传量越大。
-• CH 是对应路由器的所在频道
-• ESSID 是对应路由器的名称
+
+* BSSID 是 AP 端的 MAC 地址
+* PWR 是信号强度，数字越小越好
+* Data 是对应的路由器的在线数据吞吐量，数字越大，数据上传量越大。
+* CH 是对应路由器的所在频道
+* ESSID 是对应路由器的名称
 
 停止扫描后使用 `airodump-ng` 监听指定目标频道
 
@@ -71,7 +72,7 @@ sudo airodump-ng wlp2s0mon
 
 ![aircrak-ng-linux-7](https://oss.zjun.info/zjun.info/aircrak-ng-linux-7.png)
 
-`注` ：aireplay-ng -<攻击模式，我们这里使用 解除认证攻击> [攻击次数，0 为无限攻击] -a <AP 端的 MAC 地址> -c <客户端端的 MAC 地址> <你的网卡名称>
+`注` ：`aireplay-ng -<攻击模式，我们这里使用 解除认证攻击> [攻击次数，0 为无限攻击] -a <AP 端的 MAC 地址> -c <客户端端的 MAC 地址> <你的网卡名称>`
 
 这里我使用的是解除认证攻击模式，给客户端无限发送测试包使其下线。当你获取到握手包时，可以使用 `Ctrl + C` 停止发送测试包。
 
