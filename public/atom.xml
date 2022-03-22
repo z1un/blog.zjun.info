@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">zjun&#39;s blog</title>
     <subtitle type="html">这是zjun的个人博客，专注于WEB安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。</subtitle>
-    <updated>2022-03-22T22:01:02&#43;08:00</updated>
+    <updated>2022-03-22T22:13:28&#43;08:00</updated>
     <id>https://blog.zjun.info/</id>
     <link rel="alternate" type="text/html" href="https://blog.zjun.info/" />
     <link rel="self" type="application/atom&#43;xml" href="https://blog.zjun.info/atom.xml" />
@@ -20,7 +20,7 @@
             <title type="text">CVE-2021-3493 Ubuntu OverlayFS 本地提权漏洞分析</title>
             <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/cve-2021-3493.html" />
             <id>https://blog.zjun.info/2022/cve-2021-3493.html</id>
-            <updated>2022-03-22T22:00:44&#43;08:00</updated>
+            <updated>2022-03-22T22:12:29&#43;08:00</updated>
             <published>2022-03-22T21:44:51&#43;08:00</published>
             
             <summary type="html">在 B 站 1 看见该漏洞的分析视频，并且到目前，我在内网也用到很多次该漏洞提权，也正好学习一下。 CVE-2021-3493 是由于 Linux 内核中的 OverlayFS 文件系统没有正确根据 user namespace 校验 capability 权限，从而导致普通用……</summary>
