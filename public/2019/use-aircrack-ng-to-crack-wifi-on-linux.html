@@ -57,13 +57,13 @@
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "datePublished": "2019-09-21T12:50:05+00:00",
-        "dateModified": "2022-03-11T12:39:16+08:00",
+        "dateModified": "2022-03-22T22:17:03+08:00",
         "url": "https://blog.zjun.info/2019/use-aircrack-ng-to-crack-wifi-on-linux.html",
         "headline": "Linux 上使用 aircrack-ng 破解 WIFI",
         "description": "这是一篇写于 2018 年的文章，首发于 CSDN： https://blog.csdn.net/qq_43760866/article/details/86773003。 使……",
         "inLanguage" : "zh-CN",
         "articleSection": "posts",
-        "wordCount":  834 ,
+        "wordCount":  829 ,
         "image": ["https://oss.zjun.info/zjun.info/aircrak-ng-linux-1.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-2.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-3.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-4.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-5.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-6.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-7.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-8.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-9.png","https://oss.zjun.info/zjun.info/aircrak-ng-linux-10.png"],
         "publisher": {
             "@type": "Organization",
@@ -99,7 +99,7 @@
 <meta property="og:locale" content="zh" /><meta property="og:image" content="https://oss.zjun.info/zjun.info/aircrak-ng-linux-1.png" />
 <meta property="og:type" content="article" />
     <meta property="article:published_time" content="2019-09-21T12:50:05&#43;00:00" />
-    <meta property="article:modified_time" content="2022-03-11T12:39:16&#43;08:00" />
+    <meta property="article:modified_time" content="2022-03-22T22:17:03&#43;08:00" />
     
     <meta property="article:section" content="posts" />
 
@@ -274,12 +274,14 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo airodump-ng wlp2s0mon
 </span></span></code></pre></div><p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-3.png" alt="aircrak-ng-linux-3"></p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-4.png" alt="aircrak-ng-linux-4"></p>
-<p><code>注</code> ：airodump-ng &lt;你的网卡名称&gt;
-• BSSID 是 AP 端的 MAC 地址
-• PWR 是信号强度，数字越小越好
-• Data 是对应的路由器的在线数据吞吐量，数字越大，数据上传量越大。
-• CH 是对应路由器的所在频道
-• ESSID 是对应路由器的名称</p>
+<p><code>注</code> ：airodump-ng &lt;你的网卡名称&gt;</p>
+<ul>
+<li>BSSID 是 AP 端的 MAC 地址</li>
+<li>PWR 是信号强度，数字越小越好</li>
+<li>Data 是对应的路由器的在线数据吞吐量，数字越大，数据上传量越大。</li>
+<li>CH 是对应路由器的所在频道</li>
+<li>ESSID 是对应路由器的名称</li>
+</ul>
 <p>停止扫描后使用 <code>airodump-ng</code> 监听指定目标频道</p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-5.png" alt="aircrak-ng-linux-5"></p>
 <p><code>注</code> ：airodump-ng -c &lt;AP 的频道&gt; -w &lt;抓取握手包的存放位置&gt; --bssid &lt;AP 的 MAC 地址&gt; &lt;你的网卡名称&gt;</p>
@@ -287,7 +289,7 @@
 <p>当你获取道握手包时，右上角区域会显示 <code>WPA handshake</code> ，因为后期截图的原因，这里显示已获取，若没有获取则需要发动攻击，迫使合法的客户端断线，进行重新认证，我们趁机抓包。</p>
 <p>保持上一个终端窗口的运行状态，打开一个新的终端</p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-7.png" alt="aircrak-ng-linux-7"></p>
-<p><code>注</code> ：aireplay-ng -&lt;攻击模式，我们这里使用 解除认证攻击&gt; [攻击次数，0 为无限攻击] -a &lt;AP 端的 MAC 地址&gt; -c &lt;客户端端的 MAC 地址&gt; &lt;你的网卡名称&gt;</p>
+<p><code>注</code> ：<code>aireplay-ng -&lt;攻击模式，我们这里使用 解除认证攻击&gt; [攻击次数，0 为无限攻击] -a &lt;AP 端的 MAC 地址&gt; -c &lt;客户端端的 MAC 地址&gt; &lt;你的网卡名称&gt;</code></p>
 <p>这里我使用的是解除认证攻击模式，给客户端无限发送测试包使其下线。当你获取到握手包时，可以使用 <code>Ctrl + C</code> 停止发送测试包。</p>
 <p>在你的抓取握手包的存放目录会生成 4 个文件，握手包文件的拓展名为 <code>.cap</code></p>
 <p><img src="https://oss.zjun.info/zjun.info/aircrak-ng-linux-8.png" alt="aircrak-ng-linux-8"></p>
