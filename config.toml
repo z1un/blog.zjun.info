@@ -221,19 +221,24 @@ uglyURLs = false
         weight = 6
         pre = "internal"
     [[menu.main]]
+        url = "https://blog.zjun.info/rss.xml"
+        name = "RSS订阅"
+        weight = 7
+        pre = "internal"
+    [[menu.main]]
         url = "https://tools.zjun.info"
         name = "在线工具"
-        weight = 7
+        weight = 8
         pre = "internal"
     [[menu.main]]
         url = "https://github.com/z1un"
         name = "Github"
-        weight = 8
+        weight = 9
         pre = "internal"
     [[menu.main]]
         url = "https://twitter.com/zjuninfo"
         name = "Twitter"
-        weight = 9
+        weight = 10
         pre = "internal"
     [[menu.main]]
         weight = 13
