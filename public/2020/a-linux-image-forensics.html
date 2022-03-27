@@ -448,6 +448,9 @@ wget http://192.168.56.1/rk.tar -O /tmp/rk.tar</p>
     function loadComments() {
         (function() {
             var utterances = document.getElementById("utterances");
+            if (!utterances) {
+                return;
+            }
             var script = document.createElement('script');
             script.src = 'https://utteranc.es/client.js';
             script.async = true;

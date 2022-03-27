@@ -575,6 +575,9 @@ C --&gt; |No| E(认证失败);
     function loadComments() {
         (function() {
             var utterances = document.getElementById("utterances");
+            if (!utterances) {
+                return;
+            }
             var script = document.createElement('script');
             script.src = 'https://utteranc.es/client.js';
             script.async = true;
