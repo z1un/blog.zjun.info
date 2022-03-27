@@ -1290,7 +1290,7 @@ uglyURLs = false
     displaySiteCopyright = false
 
     # 自定义页脚（支持 Markdown）
-    customFooter = "[Homepage](https://zjun.info/) [Tools](https://tools.zjun.info/) [Github](https://github.com/z1un) [Twitter](https://twitter.com/zjuninfo)"
+    customFooter = ""
 
     displayBusuanziSiteUVAndPV = false
     busuanziSiteUVText = "本站访客数"
