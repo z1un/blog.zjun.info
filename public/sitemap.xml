@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.zjun.info/tags/4everland/</loc>
+    <lastmod>2022-03-29T14:49:47+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.zjun.info/tags/netlify/</loc>
+    <lastmod>2022-03-29T14:49:47+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.zjun.info/tags/vercel/</loc>
+    <lastmod>2022-03-29T14:49:47+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.zjun.info/</loc>
+    <lastmod>2022-03-29T14:49:47+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2022-03-29T14:49:47+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.zjun.info/2022/issues-of-static-website-hosting-platform.html</loc>
+    <lastmod>2022-03-29T14:49:47+08:00</lastmod>
+  </url><url>
     <loc>https://blog.zjun.info/tags/cve-2021-3493/</loc>
     <lastmod>2022-03-22T22:12:29+08:00</lastmod>
   </url><url>
@@ -16,12 +34,6 @@
   </url><url>
     <loc>https://blog.zjun.info/tags/overlayfs/</loc>
     <lastmod>2022-03-22T22:12:29+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.zjun.info/</loc>
-    <lastmod>2022-03-23T13:26:05+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2022-03-22T22:17:03+08:00</lastmod>
   </url><url>
     <loc>https://blog.zjun.info/2022/cve-2022-0543.html</loc>
     <lastmod>2022-03-16T19:16:24+08:00</lastmod>

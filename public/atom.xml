@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">zjun&#39;s blog</title>
     <subtitle type="html">这是zjun的个人博客，专注于WEB安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。</subtitle>
-    <updated>2022-03-27T18:45:21&#43;08:00</updated>
+    <updated>2022-03-29T14:50:19&#43;08:00</updated>
     <id>https://blog.zjun.info/</id>
     <link rel="alternate" type="text/html" href="https://blog.zjun.info/" />
     <link rel="self" type="application/atom&#43;xml" href="https://blog.zjun.info/atom.xml" />
@@ -16,6 +16,55 @@
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
     <generator uri="https://gohugo.io/" version="0.95.0">Hugo</generator>
+        <entry>
+            <title type="text">静态站点托管平台仅能托管静态资源？</title>
+            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/issues-of-static-website-hosting-platform.html" />
+            <id>https://blog.zjun.info/2022/issues-of-static-website-hosting-platform.html</id>
+            <updated>2022-03-29T14:49:47&#43;08:00</updated>
+            <published>2022-03-29T14:15:45&#43;08:00</published>
+            
+            <summary type="html">这篇文章首发在「跳跳糖」：https://tttang.com/archive/1501/ 4everland、vercel 与 netlify 都是是非常不错的静态资源托管云平台……</summary>
+            
+            
+            
+            
+            
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
+                            
+                        
+                    
+                
+                    
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/4everland/" term="4everland" label="4everland" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/vercel/" term="vercel" label="vercel" />
+                            
+                        
+                            
+                            
+                            
+                                <category scheme="https://blog.zjun.info/tags/netlify/" term="netlify" label="netlify" />
+                            
+                        
+                    
+                
+            
+        </entry>
+    
         <entry>
             <title type="text">CVE-2021-3493 Ubuntu OverlayFS 本地提权漏洞分析</title>
             <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/cve-2021-3493.html" />
@@ -492,67 +541,6 @@
                             
                             
                                 <category scheme="https://blog.zjun.info/tags/cdn/" term="CDN" label="CDN" />
-                            
-                        
-                    
-                
-            
-        </entry>
-    
-        <entry>
-            <title type="text">一些 Docker 逃逸漏洞</title>
-            <link rel="alternate" type="text/html" href="https://blog.zjun.info/2021/some-docker-escape-vulnerabilities.html" />
-            <id>https://blog.zjun.info/2021/some-docker-escape-vulnerabilities.html</id>
-            <updated>2022-03-11T12:39:16&#43;08:00</updated>
-            <published>2021-02-24T12:50:05&#43;00:00</published>
-            
-            <summary type="html">渗透测试中，常会拿到 Docker 环境的 Shell，为了扩展攻击面和进一步拿到有价值数据，不得不需要逃逸到宿主机上。所以查询了目前的 Docker 逃逸手法，做个复现总结。 判断是否为 Docker 环……</summary>
-            
-            
-            
-            
-            
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" term="网络安全" label="网络安全" />
-                            
-                        
-                    
-                
-                    
-                        
-                            
-                            
-                            
-                                <category scheme="https://blog.zjun.info/tags/cve-2016-5195/" term="CVE-2016-5195" label="CVE-2016-5195" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://blog.zjun.info/tags/cve-2020-15257/" term="CVE-2020-15257" label="CVE-2020-15257" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://blog.zjun.info/tags/cve-2019-5736/" term="CVE-2019-5736" label="CVE-2019-5736" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://blog.zjun.info/tags/cve-2019-14271/" term="CVE-2019-14271" label="CVE-2019-14271" />
-                            
-                        
-                            
-                            
-                            
-                                <category scheme="https://blog.zjun.info/tags/docker-%E9%80%83%E9%80%B8/" term="Docker 逃逸" label="Docker 逃逸" />
                             
                         
                     

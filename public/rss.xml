@@ -23,10 +23,59 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Sun, 27 Mar 2022 18:45:21 &#43;0800</lastBuildDate>
+        <lastBuildDate>Tue, 29 Mar 2022 14:50:19 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://blog.zjun.info/rss.xml" />
         
+        
+            <item>
+                <title>静态站点托管平台仅能托管静态资源？</title>
+                <link>https://blog.zjun.info/2022/issues-of-static-website-hosting-platform.html</link>
+                <guid isPermaLink="true">https://blog.zjun.info/2022/issues-of-static-website-hosting-platform.html</guid>
+                <pubDate>Tue, 29 Mar 2022 14:15:45 &#43;0800</pubDate>
+                
+                
+                <description>这篇文章首发在「跳跳糖」：https://tttang.com/archive/1501/ 4everland、vercel 与 netlify 都是是非常不错的静态资源托管云平台……</description>
+                
+                
+                
+                
+                
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</category>
+                                
+                            
+                        
+                    
+                        
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.zjun.info/tags/4everland/">4everland</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.zjun.info/tags/vercel/">vercel</category>
+                                
+                            
+                                
+                                
+                                
+                                    <category domain="https://blog.zjun.info/tags/netlify/">netlify</category>
+                                
+                            
+                        
+                    
+                
+            </item>
         
             <item>
                 <title>CVE-2021-3493 Ubuntu OverlayFS 本地提权漏洞分析</title>
@@ -504,67 +553,6 @@
                                 
                                 
                                     <category domain="https://blog.zjun.info/tags/cdn/">CDN</category>
-                                
-                            
-                        
-                    
-                
-            </item>
-        
-            <item>
-                <title>一些 Docker 逃逸漏洞</title>
-                <link>https://blog.zjun.info/2021/some-docker-escape-vulnerabilities.html</link>
-                <guid isPermaLink="true">https://blog.zjun.info/2021/some-docker-escape-vulnerabilities.html</guid>
-                <pubDate>Wed, 24 Feb 2021 12:50:05 &#43;0000</pubDate>
-                
-                
-                <description>渗透测试中，常会拿到 Docker 环境的 Shell，为了扩展攻击面和进一步拿到有价值数据，不得不需要逃逸到宿主机上。所以查询了目前的 Docker 逃逸手法，做个复现总结。 判断是否为 Docker 环……</description>
-                
-                
-                
-                
-                
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://blog.zjun.info/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">网络安全</category>
-                                
-                            
-                        
-                    
-                        
-                            
-                                
-                                
-                                
-                                    <category domain="https://blog.zjun.info/tags/cve-2016-5195/">CVE-2016-5195</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://blog.zjun.info/tags/cve-2020-15257/">CVE-2020-15257</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://blog.zjun.info/tags/cve-2019-5736/">CVE-2019-5736</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://blog.zjun.info/tags/cve-2019-14271/">CVE-2019-14271</category>
-                                
-                            
-                                
-                                
-                                
-                                    <category domain="https://blog.zjun.info/tags/docker-%E9%80%83%E9%80%B8/">Docker 逃逸</category>
                                 
                             
                         
