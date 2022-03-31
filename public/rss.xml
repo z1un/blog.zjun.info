@@ -10,7 +10,7 @@
         <title>zjun&#39;s blog</title>
         <link>https://blog.zjun.info/</link>
         <description>这是zjun的个人博客，专注于WEB安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。</description>
-        <generator>Hugo 0.95.0 https://gohugo.io/</generator>
+        <generator>Hugo 0.96.0 https://gohugo.io/</generator>
         
             <language>zh-CN</language>
         
@@ -23,7 +23,7 @@
         
             <copyright>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</copyright>
         
-        <lastBuildDate>Tue, 29 Mar 2022 14:50:19 &#43;0800</lastBuildDate>
+        <lastBuildDate>Thu, 31 Mar 2022 17:42:30 &#43;0800</lastBuildDate>
         
             <atom:link rel="self" type="application/rss&#43;xml" href="https://blog.zjun.info/rss.xml" />
         

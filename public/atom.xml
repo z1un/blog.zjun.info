@@ -4,7 +4,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
     <title type="text">zjun&#39;s blog</title>
     <subtitle type="html">这是zjun的个人博客，专注于WEB安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。</subtitle>
-    <updated>2022-03-29T14:50:19&#43;08:00</updated>
+    <updated>2022-03-31T17:42:30&#43;08:00</updated>
     <id>https://blog.zjun.info/</id>
     <link rel="alternate" type="text/html" href="https://blog.zjun.info/" />
     <link rel="self" type="application/atom&#43;xml" href="https://blog.zjun.info/atom.xml" />
@@ -15,7 +15,7 @@
                 <email>i@zjun.info</email>
             </author>
     <rights>[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)</rights>
-    <generator uri="https://gohugo.io/" version="0.95.0">Hugo</generator>
+    <generator uri="https://gohugo.io/" version="0.96.0">Hugo</generator>
         <entry>
             <title type="text">静态站点托管平台仅能托管静态资源？</title>
             <link rel="alternate" type="text/html" href="https://blog.zjun.info/2022/issues-of-static-website-hosting-platform.html" />
