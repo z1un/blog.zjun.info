@@ -196,7 +196,7 @@ uglyURLs = false
     #     pre = "internal"
     #     post = "home"
     [[menu.main]]
-        pageref = "/posts/"
+        pageref = "/tech/"
         name = "文章"
         weight = 2
         pre = "internal"
@@ -211,12 +211,12 @@ uglyURLs = false
     #     weight = 4
     #     pre = "internal"
     [[menu.main]]
-        pageref = "/links.html"
+        pageref = "/links/"
         name = "友链"
         weight = 5
         pre = "internal"
     [[menu.main]]
-        pageref = "/about.html"
+        pageref = "/about/"
         name = "关于"
         weight = 6
         pre = "internal"
@@ -266,8 +266,8 @@ uglyURLs = false
     
 
     [[menu.links]]
-        pageref = "posts"
-        name = "Posts"
+        pageref = "/"
+        name = "Home"
         weight = 1
         pre = "internal"
     [[menu.links]]

@@ -1,6 +1,6 @@
 ---
 title: "关于"
-url: about.html
+aliases: ["/about.html"]
 toc: false
 comments: true
 date: 2019-09-21 12:50:05
@@ -12,7 +12,7 @@ date: 2019-09-21 12:50:05
 
 本[博客](https://blog.zjun.info)是由 [hugo](https://github.com/gohugoio/hugo) 构建的静态网站，采用 GitHub Actions 持续部署。我的[主页](https://zjun.info)和[在线工具](https://tools.zjun.info)网站则部署在 [4everland](https://hosting.4everland.org/#/?invite=VIIBED79)，基于星际文件系统 [IPFS](https://ipfs.io/)，拥抱去中心化和 Web 3.0。
 
-曾有很长的一段时间用的 [hexo](https://github.com/hexojs/hexo)，所以当时文章的链接格式也一直保留，但不是通过 hugo 设置的 `uglyURLs` ，而是通过每篇文章 `Front Matter` 的 `url` 字段设置。现在想要的是专注于网络安全的学习和分享。如果你也是极简主义者 + 完美主义者，也推荐使用主题 [MemE](https://github.com/reuixiy/hugo-theme-meme)。
+曾有很长的一段时间用的 [hexo](https://github.com/hexojs/hexo)，所以当时文章的链接格式也通过每篇文章 `Front Matter` 的 [Aliases](https://gohugo.io/content-management/urls/#aliases) 设置了跳转。现在想要的是专注于网络安全的学习和分享。如果你也是极简主义者 + 完美主义者，也推荐使用主题 [MemE](https://github.com/reuixiy/hugo-theme-meme)。
 
 本博客是一个 [PWA](https://developers.google.com/web/progressive-web-apps/) 站点，你可以通过浏览器添加本博客到你的手机主屏或电脑桌面，随时随地查看本博客。如果你想订阅本博客，推荐 [Atom](https://blog.zjun.info/atom.xml)╱[RSS](https://blog.zjun.info/rss.xml)。当然，你也可以经常访问本博客，以及时获取到最新文章。
 
