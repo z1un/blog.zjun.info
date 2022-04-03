@@ -2,6 +2,7 @@
 title: "关于"
 aliases: ["/about.html"]
 toc: false
+dropCap: false
 comments: true
 date: 2019-09-21 12:50:05
 ---

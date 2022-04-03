@@ -6,6 +6,7 @@ date: 2019-10-17 12:50:05
 categories: ["CTF"]
 tags: ["CTF", "CISCN 2019", "WriteUp", "JWT", "Python", "反序列化漏洞"]
 toc: true
+dropCap: false
 draft: false
 ---
 
@@ -116,4 +117,4 @@ a = urllib.quote(a)
 print a
 ```
 
-将生成的 payload 传给 become 传入服务器可成功回显 flag
+将生成的 payload 传给 become 传入服务器可成功回显 flag。

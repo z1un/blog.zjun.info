@@ -6,12 +6,11 @@ date: 2019-09-21 12:50:05
 categories: ["网络安全"]
 tags: ["Linux", "破解 WIFI", "无线渗透"]
 toc: true
+dropCap: false
 draft: false
 ---
 
-这是一篇写于 2018 年的文章，首发于 CSDN：
-
-<https://blog.csdn.net/qq_43760866/article/details/86773003>。
+这是一篇写于 2018 年的文章，首发于 CSDN：<https://blog.csdn.net/qq_43760866/article/details/86773003>。
 
 使用工具：aircrack-ng
 
@@ -50,7 +49,7 @@ sudo airodump-ng wlp2s0mon
 
 ![aircrak-ng-linux-4](https://oss.zjun.info/zjun.info/aircrak-ng-linux-4.png)
 
-`注` ：airodump-ng <你的网卡名称>
+`注：airodump-ng <你的网卡名称>`
 
 * BSSID 是 AP 端的 MAC 地址
 * PWR 是信号强度，数字越小越好
@@ -62,7 +61,7 @@ sudo airodump-ng wlp2s0mon
 
 ![aircrak-ng-linux-5](https://oss.zjun.info/zjun.info/aircrak-ng-linux-5.png)
 
-`注` ：airodump-ng -c <AP 的频道> -w <抓取握手包的存放位置> --bssid <AP 的 MAC 地址> <你的网卡名称>
+`注：airodump-ng -c <AP 的频道> -w <抓取握手包的存放位置> --bssid <AP 的 MAC 地址> <你的网卡名称>`
 
 ![aircrak-ng-linux-6](https://oss.zjun.info/zjun.info/aircrak-ng-linux-6.png)
 
@@ -72,7 +71,7 @@ sudo airodump-ng wlp2s0mon
 
 ![aircrak-ng-linux-7](https://oss.zjun.info/zjun.info/aircrak-ng-linux-7.png)
 
-`注` ：`aireplay-ng -<攻击模式，我们这里使用 解除认证攻击> [攻击次数，0 为无限攻击] -a <AP 端的 MAC 地址> -c <客户端端的 MAC 地址> <你的网卡名称>`
+`注：aireplay-ng -<攻击模式，我们这里使用 解除认证攻击> [攻击次数，0 为无限攻击] -a <AP 端的 MAC 地址> -c <客户端端的 MAC 地址> <你的网卡名称>`
 
 这里我使用的是解除认证攻击模式，给客户端无限发送测试包使其下线。当你获取到握手包时，可以使用 `Ctrl + C` 停止发送测试包。
 
@@ -100,6 +99,6 @@ systemctl start NetworkManager.service
 
 ![aircrak-ng-linux-10](https://oss.zjun.info/zjun.info/aircrak-ng-linux-10.png)
 
-`注` ：aircrack-ng -w <字典路径> <握手包路径>
+`注：aircrack-ng -w <字典路径> <握手包路径>`
 
 `wpa/wpa2` 的密码破解完全靠运气，但是一个强大字典是肯定可以提高破解的成功几率。

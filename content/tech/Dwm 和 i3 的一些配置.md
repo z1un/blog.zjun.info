@@ -6,6 +6,7 @@ date: 2020-01-15 12:50:05
 categories: ["Linux"]
 tags: ["Linux", "Archlinux", "Dwm", "i3", "窗口管理器"]
 toc: true
+dropCap: false
 draft: false
 ---
 
