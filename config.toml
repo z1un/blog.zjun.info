@@ -1038,7 +1038,7 @@ uglyURLs = false
     ## 两端对齐
 
     # 是否开启（全局设置）
-    enableJustify = true
+    enableJustify = false
     # 说明：文章的 Front Matter 中的 `align`
     #      的优先级高于此处
 
@@ -1046,7 +1046,7 @@ uglyURLs = false
     ## 首字下沉
 
     # 是否开启（全局设置）
-    enableDropCap = false
+    enableDropCap = true
     # 说明：文章的 Front Matter 中的 `dropCap`
     #      的优先级高于此处
 
