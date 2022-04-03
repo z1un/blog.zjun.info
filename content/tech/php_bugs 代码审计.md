@@ -9,9 +9,7 @@ toc: true
 draft: false
 ---
 
-简单的 php_bugs 代码审计。
-
-所有代码均来自：<https://github.com/bowu678/php_bugs>
+简单的 php_bugs 代码审计，所有代码均来自：<https://github.com/bowu678/php_bugs>
 
 ## 0x01 extract 变量覆盖
 

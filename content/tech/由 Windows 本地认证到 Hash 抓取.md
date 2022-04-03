@@ -10,9 +10,7 @@ draft: false
 mermaid: true
 ---
 
-首发先知社区：<https://xz.aliyun.com/t/8127>
-
-`Windows` 本地登陆密码储存在位于 `%SystemRoot%\system32\config\` 目录的 `SAM` 文件中，存储内容为密码的 `hash` 值。当用户输入密码时， `Windows` 先将用户的输入通过算法加密再与 `SAM` 文件存储的数据对比，一致则认证成功。
+首发先知社区：<https://xz.aliyun.com/t/8127>。`Windows` 本地登陆密码储存在位于 `%SystemRoot%\system32\config\` 目录的 `SAM` 文件中，存储内容为密码的 `hash` 值。当用户输入密码时， `Windows` 先将用户的输入通过算法加密再与 `SAM` 文件存储的数据对比，一致则认证成功。
 
 ![lmhash-ntlmhash-1](https://oss.zjun.info/zjun.info/lmhash-ntlmhash-1.webp)
 
