@@ -1,98 +1,48 @@
 @font-face {
   font-family: 'Noto Serif SC';
-  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Regular-Alphabetic.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/NotoSerifSC-Regular-Alphabetic.woff2') format('woff2');
+  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Regular-Alphabetic.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: 'Noto Serif SC';
-  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Medium-Alphabetic.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/NotoSerifSC-Medium-Alphabetic.woff2') format('woff2');
+  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Medium-Alphabetic.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: 'Noto Serif SC';
-  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Bold-Alphabetic.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/NotoSerifSC-Bold-Alphabetic.woff2') format('woff2');
+  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Bold-Alphabetic.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: 'Source Code Pro';
-  src: url('#{$baseRelURL}/fonts/SourceCodePro-Regular.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/SourceCodePro-Regular.woff2') format('woff2');
-  font-weight: 400;
+  src: url('#{$baseRelURL}/fonts/SourceCodePro-VF_wght.woff2') format('woff2-variations'),
+       url('#{$baseRelURL}/fonts/SourceCodePro-VF_wght.woff2') format('woff2');
+  font-weight: 200 900;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: 'Source Code Pro';
-  src: url('#{$baseRelURL}/fonts/SourceCodePro-Bold.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/SourceCodePro-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Source Code Pro';
-  src: url('#{$baseRelURL}/fonts/SourceCodePro-Italic.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/SourceCodePro-Italic.woff2') format('woff2');
-  font-weight: 400;
+  src: url('#{$baseRelURL}/fonts/SourceCodePro-Italic-VF_wght.woff2') format('woff2-variations'),
+       url('#{$baseRelURL}/fonts/SourceCodePro-Italic-VF_wght.woff2') format('woff2');
+  font-weight: 200 900;
   font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Source Code Pro';
-  src: url('#{$baseRelURL}/fonts/SourceCodePro-BoldItalic.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/SourceCodePro-BoldItalic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
 }
 @font-face {
   font-family: 'EB Garamond';
-  src: url('#{$baseRelURL}/fonts/EBGaramond-BoldItalic.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/EBGaramond-BoldItalic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'EB Garamond';
-  src: url('#{$baseRelURL}/fonts/EBGaramond-Italic.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/EBGaramond-Italic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'EB Garamond';
-  src: url('#{$baseRelURL}/fonts/EBGaramond-Bold.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/EBGaramond-Bold.woff2') format('woff2');
-  font-weight: 700;
+  src: url('#{$baseRelURL}/fonts/EBGaramond-VF_wght.woff2') format('woff2-variations'),
+       url('#{$baseRelURL}/fonts/EBGaramond-VF_wght.woff2') format('woff2');
+  font-weight: 400 800;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: 'EB Garamond';
-  src: url('#{$baseRelURL}/fonts/EBGaramond-Regular.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/EBGaramond-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'EB Garamond';
-  src: url('#{$baseRelURL}/fonts/EBGaramond-Medium.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/EBGaramond-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+  src: url('#{$baseRelURL}/fonts/EBGaramond-Italic-VF_wght.woff2') format('woff2-variations'),
+       url('#{$baseRelURL}/fonts/EBGaramond-Italic-VF_wght.woff2') format('woff2');
+  font-weight: 400 800;
+  font-style: italic;
 }
 
 .home .poetry {
