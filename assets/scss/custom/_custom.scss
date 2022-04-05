@@ -1,31 +1,6 @@
-@font-face {
-  font-family: 'Source Code Pro';
-  src: url('#{$baseRelURL}/fonts/SourceCodePro-VF_wght.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/SourceCodePro-VF_wght.woff2') format('woff2');
-  font-weight: 200 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Source Code Pro';
-  src: url('#{$baseRelURL}/fonts/SourceCodePro-Italic-VF_wght.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/SourceCodePro-Italic-VF_wght.woff2') format('woff2');
-  font-weight: 200 900;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'EB Garamond';
-  src: url('#{$baseRelURL}/fonts/EBGaramond-VF_wght.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/EBGaramond-VF_wght.woff2') format('woff2');
-  font-weight: 400 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'EB Garamond';
-  src: url('#{$baseRelURL}/fonts/EBGaramond-Italic-VF_wght.woff2') format('woff2-variations'),
-       url('#{$baseRelURL}/fonts/EBGaramond-Italic-VF_wght.woff2') format('woff2');
-  font-weight: 400 800;
-  font-style: italic;
-}
+@import url("googleapis-fonts-notoserifsc.css");
+@import url("googleapis-fonts-ebgaramond.css");
+@import url("googleapis-fonts-sourcecodepro.css");
 
 .home .poetry {
     padding: 12em 1em;
