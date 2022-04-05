@@ -1,22 +1,4 @@
 @font-face {
-  font-family: 'Noto Serif SC';
-  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Regular-Alphabetic.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Noto Serif SC';
-  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Medium-Alphabetic.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Noto Serif SC';
-  src: url('#{$baseRelURL}/fonts/NotoSerifSC-Bold-Alphabetic.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
   font-family: 'Source Code Pro';
   src: url('#{$baseRelURL}/fonts/SourceCodePro-VF_wght.woff2') format('woff2-variations'),
        url('#{$baseRelURL}/fonts/SourceCodePro-VF_wght.woff2') format('woff2');
