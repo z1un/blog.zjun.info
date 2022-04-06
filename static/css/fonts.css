@@ -1,4 +1,40 @@
-/* [4] */
+/* 可变字体 */
+@font-face {
+    font-family: 'EB Garamond';
+    font-display: swap;
+    src: url('/fonts/EBGaramond-VF_wght.woff2') format('woff2-variations'),
+         url('/fonts/EBGaramond-VF_wght.woff2') format('woff2');
+    font-weight: 400 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'EB Garamond';
+    font-display: swap;
+    src: url('/fonts/EBGaramond-Italic-VF_wght.woff2') format('woff2-variations'),
+         url('/fonts/EBGaramond-Italic-VF_wght.woff2') format("woff2");
+    font-weight: 400 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-display: swap;
+    src: url('/fonts/SourceCodePro-VF_wght.woff2') format('woff2-variations'),
+         url('/fonts/SourceCodePro-VF_wght.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Source Code Pro';
+    font-display: swap;
+    src: url('/fonts/SourceCodePro-Italic-VF_wght.woff2') format('woff2-variations'),
+         url('/fonts/SourceCodePro-Italic-VF_wght.woff2') format("woff2");
+    font-weight: 200 900;
+    font-style: italic;
+}
+
+/* Noto Serif SC googleapis */
+  /* [4] */
 @font-face {
     font-family: 'Noto Serif SC';
     font-style: normal;
