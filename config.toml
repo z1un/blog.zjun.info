@@ -824,9 +824,9 @@ uglyURLs = false
     readingTimeIcon = "clock"
 
     # 是否显示不蒜子页面浏览量
-    displayBusuanziPagePV = false
+    displayBusuanziPagePV = true
     # 不蒜子页面浏览量的图标
-    busuanziPagePVIcon = "eye"
+    busuanziPagePVIcon = "user"
     # 说明：仅在生产环境（production）下渲染
     #      首页暂不支持
     #      https://busuanzi.ibruce.info/
@@ -1252,7 +1252,7 @@ uglyURLs = false
     displayBackToTopInHome = true
 
     # 是否在移动端显示
-    displayBackToTopOnMobile = true
+    displayBackToTopOnMobile = false
 
     # 按钮图标
     backToTopIcon = "arrow-up"
