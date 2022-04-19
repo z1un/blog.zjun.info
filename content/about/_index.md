@@ -9,19 +9,13 @@ date: 2019-09-21 12:50:05
 
 > 潜心习安全，不忘初心，方得始终。
 
-这是 zjun 的个人博客，专注于 WEB 安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。
+Powered by [Hugo](https://gohugo.io/) and the [MemE](https://github.com/reuixiy/hugo-theme-meme) theme.
 
-本[博客](https://blog.zjun.info)是由 [hugo](https://github.com/gohugoio/hugo) 构建的静态网站，采用 GitHub Actions 持续部署。我的[主页](https://zjun.info)和[在线工具](https://tools.zjun.info)网站则部署在 [4everland](https://hosting.4everland.org/#/?invite=VIIBED79)，基于星际文件系统 [IPFS](https://ipfs.io/)，拥抱去中心化和 Web 3.0。
+这是 zjun 的个人博客，专注于 WEB 安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。博客订阅推荐 [Atom](https://blog.zjun.info/atom.xml) 或 [RSS](https://blog.zjun.info/rss.xml)。
 
-曾有很长的一段时间用的 [hexo](https://github.com/hexojs/hexo)，所以当时文章的链接格式也通过每篇文章 `Front Matter` 的 [Aliases](https://gohugo.io/content-management/urls/#aliases) 设置了跳转。现在想要的是专注于网络安全的学习和分享。如果你也是极简主义者 + 完美主义者，也推荐使用主题 [MemE](https://github.com/reuixiy/hugo-theme-meme)。
+本博客书写规范依照 [chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines) 和 [markdownlint](https://github.com/DavidAnson/markdownlint/)。
 
-本博客是一个 [PWA](https://developers.google.com/web/progressive-web-apps/) 站点，你可以通过浏览器添加本博客到你的手机主屏或电脑桌面，随时随地查看本博客。如果你想订阅本博客，推荐 [Atom](https://blog.zjun.info/atom.xml)╱[RSS](https://blog.zjun.info/rss.xml)。当然，你也可以经常访问本博客，以及时获取到最新文章。
-
-如果你在浏览博客的过程中产生了任何疑惑或为了纠正我的错误，欢迎前往 Github 提交 [Issue](https://github.com/z1un/blog.zjun.info/issues)。同时本博客评论系统采用 [Utteranc](https://utteranc.es/)，也是基于 Github Issue，考虑到国内加载 Github 比较慢所以按需加载，评论将会在第一时间通过邮件通知我。
-
-本博客所有文章书写规范依照 [chinese-copywriting-guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines) 和 [markdownlint](https://github.com/DavidAnson/markdownlint/)。
-
-最后也欢迎各位师傅通过我的联系方式交流学习。
+欢迎各位师傅通过我的联系方式交流学习。
 
 | 途径     | 链接                              |
 | -------- | --------------------------------- |
