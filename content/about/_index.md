@@ -11,7 +11,7 @@ date: 2019-09-21 12:50:05
 
 Powered by [Hugo](https://gohugo.io/) and the [MemE](https://github.com/reuixiy/hugo-theme-meme) theme.
 
-![z1un's Github chart](https://ghchart.rshah.org/z1un)
+![z1un's Github chart](https://ghchart.rshah.org/z1un "z1un's Github chart")
 
 这是 zjun 的个人博客，专注于 WEB 安全、内网安全、渗透测试和高级可持续威胁攻击等相关学习和研究，本站长期存在并分享关于网络安全的原创文章。博客订阅推荐 [Atom](https://blog.zjun.info/atom.xml) 或 [RSS](https://blog.zjun.info/rss.xml)。
 
